@@ -7,8 +7,19 @@ for the overall project structure and course list.
 
 - One directory per course, kebab-case, matching the names in the root CLAUDE.md
   course table (e.g. `claude-api`, `model-context-protocol`).
-- One markdown note per chapter inside that course's directory, kebab-case
-  filename (e.g. `what-are-skills.md`).
+- If the course's `.course-toc.json` tags entries with a `section` field (see
+  **Course TOC lookup** in the `learning-recap` skill), one subdirectory per
+  section inside the course directory, kebab-case, named after that section
+  (e.g. `claude-api/tool-use-with-claude/`). Chapter notes live inside their
+  section directory, kebab-case filename (e.g.
+  `tool-use-with-claude/introducing-tool-use.md`).
+- If the course has no TOC file, or the TOC has no `section` field, chapter
+  notes live directly in the course directory (flat), kebab-case filename
+  (e.g. `claude-code-agent-skills/what-are-skills.md`).
+- Standalone ad-hoc research notes not tied to one specific lesson (see
+  **Handling `owner: claude` actions** in the `learning-recap` skill) live
+  loose at the course directory root, not inside any section folder, since
+  they don't correspond to a single TOC entry.
 
 ## Per-chapter workflow
 
