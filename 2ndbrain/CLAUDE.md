@@ -83,12 +83,27 @@ repo root gives a consolidated view of every open action across all chapters.
 - [x] System prompt vs CLAUDE.md vs output styles — `claude-code-agent-skills/system-prompt-vs-claude-md-vs-output-styles.md`
 - [x] CLAUDE.md load order — `claude-code-agent-skills/claude-md-load-order.md`
 - [x] Output style per directory — `claude-code-agent-skills/output-style-per-directory.md`
-- [x] Temperature — `claude-api/temperature.md`
-- [x] Response Streaming — `claude-api/response-streaming.md`
-- [x] Structured Data — `claude-api/structured-data.md`
-- [x] Prompt Evaluation — `claude-api/prompt-evaluation.md`
-- [x] Prompt Engineering Techniques — `claude-api/prompt-engineering-techniques.md`
-- [x] Introducing Tool Use — `claude-api/introducing-tool-use.md`
+- [x] Accessing the API — no chapter note (covered in an untracked pre-repo session, no transcript available)
+- [x] Getting an API key — no chapter note (covered in an untracked pre-repo session, no transcript available)
+- [x] Making a request — no chapter note (covered in an untracked pre-repo session, no transcript available)
+- [x] Multi-Turn conversations — no chapter note (covered in an untracked pre-repo session, no transcript available)
+- [x] Chat exercise — no chapter note (covered in an untracked pre-repo session, no transcript available)
+- [x] System prompts — `claude-api/accessing-claude-with-the-api/system-prompt-api-vs-claude-code-sdk.md` (ad-hoc note only, not a full chapter note)
+- [x] System prompts exercise — no chapter note (covered in an untracked pre-repo session, no transcript available)
+- [x] Temperature — `claude-api/accessing-claude-with-the-api/temperature.md`
+- [x] Response Streaming — `claude-api/accessing-claude-with-the-api/response-streaming.md`
+- [x] Structured Data — `claude-api/accessing-claude-with-the-api/structured-data.md`
+- [x] Prompt Evaluation — `claude-api/prompt-evaluation/prompt-evaluation.md`
+- [x] Exercise on prompt evals — no chapter note
+- [x] Prompt Engineering Techniques — `claude-api/prompt-engineering-techniques/prompt-engineering-techniques.md`
+- [x] Introducing Tool Use — `claude-api/tool-use-with-claude/introducing-tool-use.md`
+- [x] Multi-turn conversations with tools — `claude-api/tool-use-with-claude/multi-turn-conversations-with-tools.md`
+- [x] Implementing multiple turns — `claude-api/tool-use-with-claude/implementing-multiple-turns.md`
+- [x] Using multiple tools — `claude-api/tool-use-with-claude/using-multiple-tools.md`
+- [x] Fine grained tool calling — `claude-api/tool-use-with-claude/fine-grained-tool-calling.md`
+- [x] The text edit tool — `claude-api/tool-use-with-claude/text-editor-tool.md`
+- [x] The web search tool — `claude-api/tool-use-with-claude/web-search-tool.md`
+- [x] Quiz on tool use with Claude — `claude-api/tool-use-with-claude/quiz-on-tool-use-with-claude.md`
 
 Update this section whenever a new chapter note is completed: mark it `[x]`, add
 the file link, and update "Current course" when moving to the next course.
