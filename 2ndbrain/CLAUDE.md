@@ -76,6 +76,8 @@ repo root gives a consolidated view of every open action across all chapters.
 - [x] Response Streaming — `claude-api/response-streaming.md`
 - [x] Structured Data — `claude-api/structured-data.md`
 - [x] Prompt Evaluation — `claude-api/prompt-evaluation.md`
+- [x] Prompt Engineering Techniques — `claude-api/prompt-engineering-techniques.md`
+- [x] Introducing Tool Use — `claude-api/introducing-tool-use.md`
 
 Update this section whenever a new chapter note is completed: mark it `[x]`, add
 the file link, and update "Current course" when moving to the next course.
