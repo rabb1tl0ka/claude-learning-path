@@ -14,7 +14,7 @@ Seven-question review quiz closing out the "Tool use with Claude" section. All s
 
 ## My Insights
 
-Bruno flagged question 4 in real time — he answered it correctly from memory but wasn't confident the course had actually taught "the batch tool" anywhere in this section, and asked Claude to track it down. It hadn't: there's no literal "batch tool" in the tool-use material. See [batch-tool-vs-message-batches-api.md](batch-tool-vs-message-batches-api.md) — the quiz is referencing the separate Message Batches API (bulk async processing of many independent requests), which is a different mechanism from reducing tool round-trips within one conversation. Worth noting as a slightly misleading quiz question rather than a comprehension gap.
+Bruno flagged question 4 in real time — he answered it correctly from memory but wasn't confident the course had actually taught "the batch tool" anywhere in this section, and asked Claude to track it down. It hadn't: there's no literal "batch tool" in the tool-use material. See [batch-tool-vs-message-batches-api.md](research/batch-tool-vs-message-batches-api.md) — the quiz is referencing the separate Message Batches API (bulk async processing of many independent requests), which is a different mechanism from reducing tool round-trips within one conversation. Worth noting as a slightly misleading quiz question rather than a comprehension gap.
 
 ## Ideas
 
@@ -25,4 +25,4 @@ Bruno flagged question 4 in real time — he answered it correctly from memory b
 (none new — resolved via the research note above)
 
 ## Actions
-- [x] Summarize the "batch tool" referenced in the quiz and its purpose (owner: claude) — done same session, see [batch-tool-vs-message-batches-api.md](batch-tool-vs-message-batches-api.md); turns out it's a mislabeling of the Message Batches API
+- [x] Summarize the "batch tool" referenced in the quiz and its purpose (owner: claude) — done same session, see [batch-tool-vs-message-batches-api.md](research/batch-tool-vs-message-batches-api.md); turns out it's a mislabeling of the Message Batches API

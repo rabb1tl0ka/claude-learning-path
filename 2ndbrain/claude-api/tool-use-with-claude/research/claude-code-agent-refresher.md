@@ -1,6 +1,6 @@
 # Defining an agent in Claude Code — one-page refresher
 
-Standalone reference note (not a course chapter recap), requested by Bruno during the [introducing-tool-use](introducing-tool-use.md) session as a refresher on agent syntax/structure. See also [tool-use-api-vs-claude-code.md](tool-use-api-vs-claude-code.md) for when an agent is the right call versus a tool or skill.
+Standalone reference note (not a course chapter recap), requested by Bruno during the [introducing-tool-use](../introducing-tool-use.md) session as a refresher on agent syntax/structure. See also [tool-use-api-vs-claude-code.md](tool-use-api-vs-claude-code.md) for when an agent is the right call versus a tool or skill.
 
 ## File location and shape
 

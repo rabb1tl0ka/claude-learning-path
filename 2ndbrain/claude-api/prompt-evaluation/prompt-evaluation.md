@@ -106,7 +106,7 @@ requested. Code-based validation for this used three helpers: `validate_json`,
 ## Actions
 
 - [x] Research how to quickly set up and use Jupyter notebooks (owner: claude)
-      — done same session, see `jupyter-notebooks-setup.md`
+      — done same session, see `research/jupyter-notebooks-setup.md`
 - [x] Extract all chapter title/URL pairs from the Claude API course page for
       future learning-recap source links (owner: claude) — done same session,
       `.course-toc.json` now covers the full course curriculum

@@ -1,6 +1,6 @@
 # Tool use (Claude API) vs. Skills and Agents (Claude Code)
 
-Standalone reference note (not a course chapter recap), requested by Bruno during the [introducing-tool-use](introducing-tool-use.md) session — he wanted a comparison between the API's tool use and the closest equivalents in Claude Code, having guessed Skills were closest and Agents were something else.
+Standalone reference note (not a course chapter recap), requested by Bruno during the [introducing-tool-use](../introducing-tool-use.md) session — he wanted a comparison between the API's tool use and the closest equivalents in Claude Code, having guessed Skills were closest and Agents were something else.
 
 ## Claude API tool use — the raw building block
 

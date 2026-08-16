@@ -1,6 +1,6 @@
 # Tool loading strategy: load everything vs. classify first
 
-Standalone reference note (not a course chapter recap), requested by Bruno during the [introducing-tool-use](introducing-tool-use.md) session — his core question: in a production AI server, how do you know which tool schema(s) to send for an unpredictable user message, when the course's own exercise hard-codes it?
+Standalone reference note (not a course chapter recap), requested by Bruno during the [introducing-tool-use](../introducing-tool-use.md) session — his core question: in a production AI server, how do you know which tool schema(s) to send for an unpredictable user message, when the course's own exercise hard-codes it?
 
 ## The two naive options
 

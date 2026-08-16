@@ -1,6 +1,6 @@
 # Custom Claude Code agent for the reminder tools (bash + cron)
 
-Standalone reference note (not a course chapter recap), requested by Bruno during the [introducing-tool-use](introducing-tool-use.md) session — he asked whether the three reminder tools (get current time, add duration to datetime, set a reminder) could be reimplemented as a custom Claude Code agent instead of Python functions called through the API.
+Standalone reference note (not a course chapter recap), requested by Bruno during the [introducing-tool-use](../introducing-tool-use.md) session — he asked whether the three reminder tools (get current time, add duration to datetime, set a reminder) could be reimplemented as a custom Claude Code agent instead of Python functions called through the API.
 
 ## Short answer
 

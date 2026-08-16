@@ -1,7 +1,7 @@
 # Jupyter Notebooks — quick setup and use
 
 Standalone reference note (not a course chapter recap), requested by Bruno during
-the [prompt-evaluation](prompt-evaluation.md) session since the course starts
+the [prompt-evaluation](../prompt-evaluation.md) session since the course starts
 using notebooks for the eval pipeline from that chapter onward.
 
 ## Install and launch

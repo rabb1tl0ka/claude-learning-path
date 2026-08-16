@@ -23,7 +23,7 @@ Prompt engineering = taking a written prompt and improving it iteratively to get
 ## My Insights
 - Restated the clear/direct rule in his own words: "Clear means simple language anyone can understand. Direct means instructions, not questions — start with direct action verbs like write, create, generate."
 - Flagged (and then self-corrected) a broader observation: if building an AI product, the system prompt and prompt types embedded into the system are "the uniqueness about it" — called it more of a highlight than a fully-formed idea.
-- Wondered whether his own second-brain habit of using Markdown-style bracket tags (`[tag]`/`[/tag]`) instead of formal XML tags makes a difference — this became the Claude action below. See also: [`xml-vs-markdown-tags.md`](xml-vs-markdown-tags.md).
+- Wondered whether his own second-brain habit of using Markdown-style bracket tags (`[tag]`/`[/tag]`) instead of formal XML tags makes a difference — this became the Claude action below. See also: [`xml-vs-markdown-tags.md`](research/xml-vs-markdown-tags.md).
 
 ## Ideas
 *(none — the AI-product observation above was self-classified as an insight, not an idea)*
@@ -32,4 +32,4 @@ Prompt engineering = taking a written prompt and improving it iteratively to get
 *(none flagged — skipped the hands-on exercise and went straight to the quiz, no comprehension gaps noted)*
 
 ## Actions
-- [x] Research XML tags vs Markdown tags for structuring prompts (owner: claude) — done same session, see [`xml-vs-markdown-tags.md`](xml-vs-markdown-tags.md)
+- [x] Research XML tags vs Markdown tags for structuring prompts (owner: claude) — done same session, see [`xml-vs-markdown-tags.md`](research/xml-vs-markdown-tags.md)

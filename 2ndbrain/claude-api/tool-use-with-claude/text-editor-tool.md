@@ -9,7 +9,7 @@ Unlike every tool built so far in this project, the **text editor tool** is one 
 
 ## My Insights
 
-Bruno's core confusion (his words): "why doesn't the Claude API come with an SDK that already comes ready with a text editor implementation per operating system?" He gets *why* the implementation has to be server-side (it's touching your actual filesystem) but wanted to know why Anthropic doesn't just ship the OS-specific implementation code as part of an SDK, the way the schema itself is bundled. See [text-editor-tool-no-sdk.md](text-editor-tool-no-sdk.md) for the research — short version: file I/O is inherently environment/permission-specific in a way that resists a safe universal default, and the Agent SDK (used by Claude Code) already does ship a working implementation for people who don't want to write their own.
+Bruno's core confusion (his words): "why doesn't the Claude API come with an SDK that already comes ready with a text editor implementation per operating system?" He gets *why* the implementation has to be server-side (it's touching your actual filesystem) but wanted to know why Anthropic doesn't just ship the OS-specific implementation code as part of an SDK, the way the schema itself is bundled. See [text-editor-tool-no-sdk.md](research/text-editor-tool-no-sdk.md) for the research — short version: file I/O is inherently environment/permission-specific in a way that resists a safe universal default, and the Agent SDK (used by Claude Code) already does ship a working implementation for people who don't want to write their own.
 
 ## Ideas
 
@@ -20,4 +20,4 @@ Bruno's core confusion (his words): "why doesn't the Claude API come with an SDK
 - Why the text editor tool ships only half-built (schema, no implementation) when the schema-generation logic feels like it could plausibly extend to a reference implementation too.
 
 ## Actions
-- [x] Research why the Claude API doesn't ship an SDK with pre-built text editor tool implementations per operating system (Windows/macOS/Linux) (owner: claude) — done same session, see [text-editor-tool-no-sdk.md](text-editor-tool-no-sdk.md)
+- [x] Research why the Claude API doesn't ship an SDK with pre-built text editor tool implementations per operating system (Windows/macOS/Linux) (owner: claude) — done same session, see [text-editor-tool-no-sdk.md](research/text-editor-tool-no-sdk.md)

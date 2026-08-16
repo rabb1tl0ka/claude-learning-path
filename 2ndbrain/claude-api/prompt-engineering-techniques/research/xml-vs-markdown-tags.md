@@ -1,7 +1,7 @@
 # XML tags vs Markdown-style tags for prompt structure
 
 Standalone reference note (not a course chapter recap), requested by Bruno during
-the [prompt-engineering-techniques](prompt-engineering-techniques.md) session — he
+the [prompt-engineering-techniques](../prompt-engineering-techniques.md) session — he
 wondered whether wrapping content in XML tags (`<sales_records>...</sales_records>`)
 has any real advantage over the Markdown-bracket style he already uses in his own
 second-brain notes (`[sales_records] ... [/sales_records]`).

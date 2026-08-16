@@ -19,11 +19,11 @@ Bruno tied this straight back to the tool-loading-strategy question from the pre
 
 ## Ideas
 
-(none new this session — see the lookup-tool idea from [introducing-tool-use.md](introducing-tool-use.md) / [tool-loading-strategy.md](tool-loading-strategy.md), which this chapter's material didn't extend)
+(none new this session — see the lookup-tool idea from [introducing-tool-use.md](introducing-tool-use.md) / [tool-loading-strategy.md](research/tool-loading-strategy.md), which this chapter's material didn't extend)
 
 ## Challenges
 
-- If Claude only gets a tool's full schema after it "decides" it wants to use it, how does it know a tool like `get_current_date_time` exists at all, or that it should reach for it, before ever seeing that schema? The course's example doesn't address this — see [tool-loading-strategy.md](tool-loading-strategy.md) for the research already done on this exact question in the previous session.
+- If Claude only gets a tool's full schema after it "decides" it wants to use it, how does it know a tool like `get_current_date_time` exists at all, or that it should reach for it, before ever seeing that schema? The course's example doesn't address this — see [tool-loading-strategy.md](research/tool-loading-strategy.md) for the research already done on this exact question in the previous session.
 
 ## Actions
-- [x] Check why the course page for this chapter never explains how Claude knows about a tool like `get_current_date_time` before it has the schema (owner: claude) — resolved by pointing back to [tool-loading-strategy.md](tool-loading-strategy.md) from the prior session, which already covers this; no new research needed.
+- [x] Check why the course page for this chapter never explains how Claude knows about a tool like `get_current_date_time` before it has the schema (owner: claude) — resolved by pointing back to [tool-loading-strategy.md](research/tool-loading-strategy.md) from the prior session, which already covers this; no new research needed.

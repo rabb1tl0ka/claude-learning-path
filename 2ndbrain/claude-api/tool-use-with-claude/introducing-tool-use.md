@@ -29,19 +29,19 @@ Each gap gets solved with a dedicated tool: one to get the current time, one to 
 
 ## My Insights
 
-The tool-description guidance ("3-4 sentences: what it does, when to use it, what it returns") reads almost identically to how a Skill or Agent description gets written in Claude Code — same purpose, same failure mode if it's vague. That parallel is worth keeping in mind going forward: writing a good tool schema and writing a good `SKILL.md`/agent `description` field are the same underlying skill. See [tool-use-api-vs-claude-code.md](tool-use-api-vs-claude-code.md) for the full comparison.
+The tool-description guidance ("3-4 sentences: what it does, when to use it, what it returns") reads almost identically to how a Skill or Agent description gets written in Claude Code — same purpose, same failure mode if it's vague. That parallel is worth keeping in mind going forward: writing a good tool schema and writing a good `SKILL.md`/agent `description` field are the same underlying skill. See [tool-use-api-vs-claude-code.md](research/tool-use-api-vs-claude-code.md) for the full comparison.
 
 ## Ideas
 
-- Reimplement the three reminder tools as a custom Claude Code agent — get the current time via bash, do the date math via bash/Python, and fire the reminder via a scheduling mechanism (cron, or this environment's own scheduling tools) instead of hand-writing everything as API tool functions. See [custom-agent-for-reminders.md](custom-agent-for-reminders.md).
+- Reimplement the three reminder tools as a custom Claude Code agent — get the current time via bash, do the date math via bash/Python, and fire the reminder via a scheduling mechanism (cron, or this environment's own scheduling tools) instead of hand-writing everything as API tool functions. See [custom-agent-for-reminders.md](research/custom-agent-for-reminders.md).
 
 ## Challenges
 
-- **The core open question**: in a real server exposing this to actual users (rather than the notebook's hard-coded example messages), how do you know *which* tool schema to send with a given request? Load every tool by default just in case, or run an extra check first to figure out which tool(s) are needed before sending the full schema? The course's later chapter titles (multi-turn conversations with tools, multiple tools) didn't obviously answer this before the lesson was paused here — see [tool-loading-strategy.md](tool-loading-strategy.md) for the research done on this during the same session.
+- **The core open question**: in a real server exposing this to actual users (rather than the notebook's hard-coded example messages), how do you know *which* tool schema to send with a given request? Load every tool by default just in case, or run an extra check first to figure out which tool(s) are needed before sending the full schema? The course's later chapter titles (multi-turn conversations with tools, multiple tools) didn't obviously answer this before the lesson was paused here — see [tool-loading-strategy.md](research/tool-loading-strategy.md) for the research done on this during the same session.
 
 ## Actions
-- [x] Research whether bash+cron could back a custom Claude Code agent for the reminder tools (owner: claude) — done same session, see `custom-agent-for-reminders.md`
-- [x] Compare tool use in the Claude API vs. Skills/Agents in Claude Code (owner: claude) — done same session, see `tool-use-api-vs-claude-code.md`
-- [x] Write a one-page refresher on defining an agent in Claude Code (owner: claude) — done same session, see `claude-code-agent-refresher.md`
-- [x] Research the optimal tool-loading strategy (load all by default vs. classify first) for an AI app server (owner: claude) — done same session, see `tool-loading-strategy.md`
+- [x] Research whether bash+cron could back a custom Claude Code agent for the reminder tools (owner: claude) — done same session, see `research/custom-agent-for-reminders.md`
+- [x] Compare tool use in the Claude API vs. Skills/Agents in Claude Code (owner: claude) — done same session, see `research/tool-use-api-vs-claude-code.md`
+- [x] Write a one-page refresher on defining an agent in Claude Code (owner: claude) — done same session, see `research/claude-code-agent-refresher.md`
+- [x] Research the optimal tool-loading strategy (load all by default vs. classify first) for an AI app server (owner: claude) — done same session, see `research/tool-loading-strategy.md`
 - [x] Resume this chapter at "Sending tool results" for part 2 of tool use with Claude (owner: bruno) — done, see [multi-turn-conversations-with-tools.md](multi-turn-conversations-with-tools.md) onward
