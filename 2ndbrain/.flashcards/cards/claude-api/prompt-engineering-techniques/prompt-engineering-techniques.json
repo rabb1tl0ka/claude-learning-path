@@ -1,0 +1,103 @@
+{
+  "course": "Building with the Claude API",
+  "chapter": "Prompt Engineering Techniques",
+  "generated": "2026-08-16",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "root-cause-to-mechanism matching",
+      "question": "A rubric criterion is written as vague prose (e.g. 'flag severe issues') and Claude's judgments are inconsistent across similar cases. What's the correct fix?",
+      "options": [
+        "Replace the vague prose description with concrete examples showing what counts as each severity level",
+        "Add a second model pass that re-checks the first judgment for consistency",
+        "Lower the temperature to make output more deterministic",
+        "Add more guideline bullet points describing the general concept in more detail"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "root-cause-to-mechanism matching",
+      "question": "Two tags/terms in a prompt overlap in meaning (e.g. 'summary' and 'overview' used for different things) and Claude keeps mixing them up. What actually fixes this, versus what's a tempting-but-wrong default?",
+      "options": [
+        "Rewrite the terms so they're non-overlapping and distinct — the tempting-but-wrong default is just adding more detailed descriptions of the existing overlapping terms",
+        "Add a verification pass that re-checks whether the terms were used correctly",
+        "Increase temperature so the model explores alternate phrasings",
+        "Wrap the terms in XML tags without changing their names"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "being clear and direct",
+      "question": "Per the 'being clear and direct' technique, what should the first line of a prompt look like?",
+      "options": [
+        "A direct, command-style instruction with an action verb (e.g. 'write', 'generate') rather than a question",
+        "A polite question asking Claude if it's willing to help",
+        "A long paragraph of background context before any instruction",
+        "An XML tag wrapping the entire prompt"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q4",
+      "topic": "being specific",
+      "question": "An open-ended prompt like 'write a story' produces wildly inconsistent length and structure across runs. Which technique directly addresses this?",
+      "options": [
+        "Being specific — add guideline lists (length, structure, required elements) or step-by-step instructions to constrain the output space",
+        "Structure with XML tags around the word 'story'",
+        "Provide a single one-shot example only",
+        "Lower max_tokens to force a shorter output"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q5",
+      "topic": "structuring with XML tags",
+      "question": "When should you wrap interpolated content (e.g. 20 pages of sales records) in a descriptive XML tag like <sales_records>?",
+      "options": [
+        "When a prompt interpolates a large chunk of content, so Claude can clearly parse what that chunk represents",
+        "Only when using the extended thinking feature",
+        "Only when the content contains numbers",
+        "XML tags are required on every prompt regardless of content"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q6",
+      "topic": "providing examples",
+      "question": "What's the distinction between one-shot and multi-shot prompting?",
+      "options": [
+        "One-shot gives a single example; multi-shot gives multiple examples, useful for covering edge cases",
+        "One-shot means zero examples; multi-shot means exactly one example",
+        "One-shot is for text tasks, multi-shot is only for code generation tasks",
+        "They're the same technique, just different names"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q7",
+      "topic": "root-cause-to-mechanism matching",
+      "question": "Why is 'add a second model/verification pass' the wrong reflexive answer for a prompt-consistency problem caused by a vague or ambiguous instruction?",
+      "options": [
+        "It doesn't fix the root cause (the ambiguity itself) — it just re-runs the same ambiguous instruction and hopes for a different, checked result, adding cost without resolving why the output varies",
+        "Verification passes are never useful for any prompt engineering problem",
+        "A second model pass always increases temperature and makes things worse",
+        "It's technically correct but too expensive to ever use"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q8",
+      "topic": "prompt engineering workflow",
+      "question": "What was the described workflow for improving a prompt in this chapter's project?",
+      "options": [
+        "Set a goal, write a deliberately weak initial prompt, evaluate it, apply a technique, re-evaluate — repeating per technique",
+        "Write the best possible prompt on the first attempt and never re-evaluate",
+        "Only apply XML tags, since that technique alone maximizes eval score",
+        "Ask Claude to write its own prompt from scratch with no human input"
+      ],
+      "answer_index": 0
+    }
+  ]
+}

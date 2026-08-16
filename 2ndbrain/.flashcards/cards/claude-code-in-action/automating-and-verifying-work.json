@@ -1,0 +1,103 @@
+{
+  "course": "Claude Code in Action",
+  "chapter": "Automating and verifying work",
+  "generated": "2026-08-16",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "risk-matched enforcement (hooks vs prompts)",
+      "question": "A team wants to make sure Claude never force-pushes to a shared branch. Per the CLAUDE.md/Skills/Hooks three-way split, which mechanism actually guarantees this, and why not just add a CLAUDE.md rule?",
+      "options": [
+        "A hook — because CLAUDE.md and skills are instructions Claude *follows* and can still be skipped/forgotten, while a hook is code that *runs* and can outright block the action",
+        "CLAUDE.md — since it's the highest-priority instruction surface and is never overridden",
+        "A Skill, since skills automate any repeated procedure including safety rules",
+        "None of these are needed — the model's own judgment about danger is sufficient"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "risk-matched enforcement (hooks vs prompts)",
+      "question": "A team converts every project convention (formatting style, commit message format, and 'never touch prod') into hooks 'for maximum reliability.' What's the problem with this approach?",
+      "options": [
+        "It over-applies hard enforcement to low-risk conventions that a CLAUDE.md rule or skill would handle fine — enforcement should be matched to actual risk, not maximized everywhere",
+        "Hooks cannot enforce formatting or commit conventions at all, only safety rules",
+        "There's no downside; more hooks is strictly better regardless of what they enforce",
+        "Hooks are slower than prompts so this always causes performance problems"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "three-way instruction split",
+      "question": "What's the distinguishing purpose of Skills versus CLAUDE.md versus Hooks?",
+      "options": [
+        "CLAUDE.md = conventions that always apply; Skills = procedures/reference tied to a specific kind of task; Hooks = rules Claude must not be able to skip",
+        "They're three names for the same mechanism with different file extensions",
+        "CLAUDE.md only applies in CI; Skills and Hooks only apply interactively",
+        "Skills are for safety-critical rules, Hooks are for optional conventions"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q4",
+      "topic": "auto mode's classifier",
+      "question": "In auto permission mode, what does the classifier actually guard against?",
+      "options": [
+        "Intent that escalates beyond the request (e.g. production deploys, force-pushes, piping downloaded code into a shell) — not whether the code is correct",
+        "Both correctness and safety equally",
+        "Only correctness (e.g. broken logic), not safety",
+        "Nothing — auto mode has no classifier, it accepts everything unconditionally"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q5",
+      "topic": "auto mode + stop hook pairing",
+      "question": "Why should auto mode always be paired with a stop hook that runs tests?",
+      "options": [
+        "Because the classifier only blocks dangerous actions, not wrong ones — a broken refactor isn't dangerous so it passes the classifier, and only a test-running hook can catch that it's wrong",
+        "Because auto mode disables all hooks by default and stop hooks are the only ones that still fire",
+        "Because stop hooks are required to even enter auto mode",
+        "Auto mode doesn't need a stop hook if bypassPermissions is also enabled"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q6",
+      "topic": "hook exit codes",
+      "question": "What does a hook exiting with code 2 do?",
+      "options": [
+        "Blocking error — stderr is fed back to Claude as context, blocking almost everywhere; on 'stop' specifically it means 'not done yet'",
+        "Success — stdout JSON is parsed and applied",
+        "Non-blocking warning that's logged but ignored",
+        "Same as exit 1 — an error that does not block anything"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q7",
+      "topic": "verifying unsupervised runs",
+      "question": "How should the level of verification scale with a Claude Code run's autonomy?",
+      "options": [
+        "In proportion to autonomy — a short supervised session needs a glance, an unattended run or CI job needs a real check, since no one saw it happen",
+        "Verification effort should be constant regardless of how autonomous the run was",
+        "Only unattended runs need any verification at all; supervised sessions need none",
+        "Verification should scale with how long the run took, not how autonomous it was"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q8",
+      "topic": "permission modes",
+      "question": "Which permission mode fits a CI pipeline where no one is present to approve actions, auto-denying anything not pre-approved?",
+      "options": [
+        "dontAsk",
+        "acceptEdits",
+        "bypassPermissions",
+        "manual"
+      ],
+      "answer_index": 0
+    }
+  ]
+}

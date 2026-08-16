@@ -1,0 +1,79 @@
+{
+  "course": "Claude Code in Action",
+  "chapter": "Sharing and scaling Claude Code",
+  "generated": "2026-08-16",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "headless-p-flag",
+      "question": "A CI pipeline script runs `claude \"Analyze this PR\"` and the job hangs indefinitely, with logs showing it's waiting for interactive input. What's the fix?",
+      "options": [
+        "Add the -p flag: claude -p \"Analyze this PR\"",
+        "Add a --batch flag",
+        "Set an environment variable like CLAUDE_HEADLESS=true before running the command",
+        "Redirect stdin from /dev/null"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "session-context-isolation-ci",
+      "question": "A CI/CD pipeline runs Claude Code to generate tests in one step, then review the same code in a subsequent step, both using -p correctly. The review step rarely finds issues that human reviewers consistently catch. What's the likely cause and fix?",
+      "options": [
+        "The generation and review steps must run as independent sessions with no shared context, so the review instance approaches the code without the original reasoning bias",
+        "The review step needs --output-format json to produce structured, parseable findings",
+        "The review step is running on a less capable model tier and needs upgrading",
+        "The CLAUDE.md file lacks testing standards, so the review step has no criteria to evaluate against"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "session-context-isolation-ci",
+      "question": "A CI/CD pipeline runs three Claude Code steps in sequence (generate changelog, review changelog for accuracy, check for breaking changes) and the review/check steps never catch anything the generation step missed. What's the root cause?",
+      "options": [
+        "The three steps share session context, so steps 2 and 3 inherit step 1's reasoning instead of independently judging the changelog",
+        "The steps need --output-format json so each can parse the previous step's structured output",
+        "The -p flag isn't being used, causing each step to wait for interactive input",
+        "The CLAUDE.md file doesn't contain changelog formatting standards"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q4",
+      "topic": "structured-output-format-flag",
+      "question": "A CI pipeline needs one Claude Code step to output structured JSON for a dashboard, and another step to produce plain text output. How should the two steps be configured?",
+      "options": [
+        "Run the JSON-needing step with -p --output-format json, and the plain-text step with -p alone, as separate non-interactive invocations",
+        "Run both steps in a single Claude Code session with -p, using different prompts to request different formats",
+        "Run both steps with --output-format json and have the plain-text step extract content from the JSON response",
+        "Run both steps with -p and have the dashboard parse plain text output from both"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q5",
+      "topic": "agent-sdk-vs-headless-vs-routines",
+      "question": "What's the rule of thumb for choosing between routines, headless mode, and the Agent SDK?",
+      "options": [
+        "Routines for repeat work you don't want to self-host; headless mode when the job needs your own pipeline; the Agent SDK when the work belongs inside your own product",
+        "Always prefer the Agent SDK, since it subsumes both routines and headless mode",
+        "Routines and headless mode are interchangeable; the Agent SDK is only for enterprise customers",
+        "Headless mode is deprecated in favor of routines for all CI/CD use cases"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q6",
+      "topic": "managed-code-review-vs-github-action",
+      "question": "A team wants every PR reviewed automatically with inline comments, nothing custom to build or host, and no need for Claude to approve/block the PR. What's the best fit?",
+      "options": [
+        "Managed Code Review via the Claude GitHub App",
+        "The Claude Code GitHub Action with a custom workflow",
+        "A routine triggered on every PR open",
+        "The Agent SDK embedded in a custom review service"
+      ],
+      "answer_index": 0
+    }
+  ]
+}

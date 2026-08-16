@@ -1,0 +1,115 @@
+{
+  "course": "Building with the Claude API",
+  "chapter": "Agents and workflows",
+  "generated": "2026-08-16",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "multi-agent context-passing ownership",
+      "question": "In a multi-agent pipeline, a downstream/receiving agent produces a wrong result because it never got the structured context it needed. Whose responsibility was that?",
+      "options": [
+        "The coordinator/upstream agent's — it's responsible for passing structured context forward to the agent that needs it, not just handing off a bare task",
+        "The downstream agent's — it should have inferred the missing context on its own",
+        "It's nobody's fault, this is an expected agent failure rate",
+        "The user's, for not providing more detail in the original request"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "multi-agent context-passing ownership",
+      "question": "A coordinator hands a subtask to a specialized agent but only passes a short task description, not the relevant prior findings. The specialized agent then produces an inconsistent result. Where's the root cause?",
+      "options": [
+        "In the coordinator's handoff — it dropped structured context on the way down, not in the receiving agent's reasoning",
+        "In the receiving agent's tool selection",
+        "In the receiving agent's prompt engineering only",
+        "In the user's original request, since it wasn't specific enough"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "workflows vs. agents rule of thumb",
+      "question": "What's the rule of thumb for choosing a workflow over an agent?",
+      "options": [
+        "Use a workflow when the precise series of steps is known ahead of time; use an agent when the steps aren't known and Claude needs to plan its own path with tools",
+        "Always prefer agents, since they're strictly more capable than workflows",
+        "Use a workflow only for single-step tasks and an agent for anything with more than one step",
+        "The choice depends only on which is faster to build, not on task predictability"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q4",
+      "topic": "chaining vs routing",
+      "question": "Claude is given a long prompt with many constraints and keeps partially ignoring some of them. Which workflow pattern actually fixes this, and why is it not routing?",
+      "options": [
+        "Chaining — break the task into sequential steps and send narrow follow-up corrections; routing doesn't apply because there's nothing to classify/categorize here",
+        "Routing — classify which constraint is being violated, then forward to a specialized prompt for that constraint",
+        "Parallelization — run all the constraints as independent subtasks and aggregate",
+        "Evaluator-optimizer — since any correctness problem should default to a grader loop"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q5",
+      "topic": "parallelization pattern",
+      "question": "What's the parallelization workflow pattern, and what's a key benefit?",
+      "options": [
+        "Split one task into independent subtasks that run concurrently, then join results in a final aggregator call — each subtask prompt stays focused, is easy to evaluate independently, and the pattern scales by adding/removing subtasks",
+        "Run the same prompt multiple times and pick the majority answer",
+        "Split a task into sequential dependent steps that must run in order",
+        "Have one Claude call classify input, then forward to a specialized downstream pipeline"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q6",
+      "topic": "tool design for agents",
+      "question": "Per the course's guidance (using Claude Code as the example), how should tools given to an agent be designed?",
+      "options": [
+        "Abstract and generic (e.g. bash, read, write) rather than hyper-specialized (e.g. a dedicated 'refactor' tool) — the agent combines generic tools to accomplish specific goals",
+        "As hyper-specialized as possible, one tool per exact task, to minimize ambiguity",
+        "Agents should not be given tools at all — only workflows use tools",
+        "Tools should always be paired 1:1 with each possible user request type"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q7",
+      "topic": "environment inspection",
+      "question": "Why does environment inspection matter for agents?",
+      "options": [
+        "An agent needs a way to check the actual resulting state after (or before) an action, rather than just trusting what the tool call claims happened",
+        "It's only relevant for computer-use agents taking screenshots, not general-purpose agents",
+        "It replaces the need for tool descriptions entirely",
+        "It's a workflow-only concept and doesn't apply to agents"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q8",
+      "topic": "evaluator-optimizer pattern",
+      "question": "What is the evaluator-optimizer workflow pattern?",
+      "options": [
+        "A 'producer' generates output, a 'grader' checks it against criteria, and feedback loops back to the producer until the grader accepts the result",
+        "Two producers generate output independently and a human picks the better one",
+        "A single Claude call that both produces and grades its own output in one pass with no loop",
+        "Routing input to one of several specialized producers based on category"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q9",
+      "topic": "workflows vs agents tradeoffs",
+      "question": "What's the tradeoff agents make relative to workflows, per this chapter?",
+      "options": [
+        "Agents trade reliability/testability for flexibility — they handle unanticipated inputs and can ask for more input, but have a lower success rate and are harder to test",
+        "Agents are strictly higher accuracy than workflows in every case",
+        "Workflows can handle unanticipated inputs better than agents",
+        "There is no meaningful tradeoff; the choice is purely stylistic"
+      ],
+      "answer_index": 0
+    }
+  ]
+}

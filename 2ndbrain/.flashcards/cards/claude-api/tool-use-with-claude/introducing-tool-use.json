@@ -1,0 +1,103 @@
+{
+  "course": "Building with the Claude API",
+  "chapter": "Introducing Tool Use",
+  "generated": "2026-08-16",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "tool schema completeness",
+      "question": "A complete tool spec for the Claude API requires which three parts?",
+      "options": [
+        "name, description, input_schema",
+        "name, examples, temperature",
+        "description, model, max_tokens",
+        "name, input_schema, tool_choice"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "tool description quality",
+      "question": "Claude is repeatedly calling the wrong tool out of two similarly-named tools in a set. Per the course's guidance on tool descriptions, what's the most direct fix?",
+      "options": [
+        "Rewrite both descriptions to be more distinct about what each tool does, when to use it, and what it returns",
+        "Add a second Claude call that double-checks which tool was picked",
+        "Lower the temperature so tool selection is more deterministic",
+        "Add more few-shot examples of correct tool calls to the system prompt"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "tool-choice/tool-granularity confusion",
+      "question": "Two tools overlap in what they can do (e.g. one tool sets a reminder for 'a date' and another sets one for 'a duration from now'), and Claude picks the wrong one under time pressure. What's actually wrong here?",
+      "options": [
+        "The tools have overlapping responsibility/granularity, not just unclear wording — they should be redesigned so each owns a distinct, non-overlapping job",
+        "Claude needs a few-shot example added showing the correct tool for each case",
+        "The descriptions need to be longer and more detailed",
+        "A verification pass should check which tool was called and retry if wrong"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q4",
+      "topic": "tool function execution",
+      "question": "What triggers a tool function to actually execute in the reminder-notebook project from this chapter?",
+      "options": [
+        "Claude deciding, based on the tool's name/description and the user's request, that it needs the info/action the function provides",
+        "The developer manually calling the function whenever a tool_use block appears",
+        "A cron job polling for pending tool calls",
+        "The API automatically executing any registered function on every turn"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q5",
+      "topic": "multi-block assistant messages",
+      "question": "When Claude decides to use a tool, what does the assistant message actually contain?",
+      "options": [
+        "Potentially multiple content blocks — e.g. a text block plus a tool_use block with the tool's id, name, and input",
+        "Only a single tool_use block, since Claude cannot emit text on a tool-call turn",
+        "A single plain-text string describing which tool to call",
+        "A tool_result block confirming the tool already ran"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q6",
+      "topic": "message history management",
+      "question": "Why does the developer need to preserve the full content-block structure (not just extracted text) when appending Claude's tool-use response to the message history?",
+      "options": [
+        "Claude doesn't manage conversation history itself — the developer must resend the complete prior structure, including tool_use blocks, for the API to have full context",
+        "The API rejects any message history that contains plain text blocks",
+        "Tool_use blocks are automatically stripped by the API if not manually preserved, so this step is optional",
+        "It's only needed when using extended thinking"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q7",
+      "topic": "sending tool results",
+      "question": "After a tool function runs, how is its output returned to Claude in the next turn?",
+      "options": [
+        "As a tool_result block referencing the original tool_use id",
+        "As a new system prompt describing the result",
+        "By re-sending the original user message with the result appended as plain text",
+        "Tool results are not sent back — Claude infers them from context"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q8",
+      "topic": "why tool use exists",
+      "question": "What's the core limitation of Claude that tool use is designed to solve?",
+      "options": [
+        "Claude's knowledge is limited to its training data, so it can't get real-time information or take actions in the world on its own",
+        "Claude cannot process JSON without a tool schema",
+        "Claude cannot hold a multi-turn conversation without tools",
+        "Claude requires tools to generate any structured output at all"
+      ],
+      "answer_index": 0
+    }
+  ]
+}

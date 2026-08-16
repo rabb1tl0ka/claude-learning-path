@@ -1,0 +1,79 @@
+{
+  "course": "Claude Code in Action",
+  "chapter": "Long-running sessions, steering, and CLAUDE.md configuration",
+  "generated": "2026-08-16",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "claude-md-hierarchy",
+      "question": "A consultancy works across 12 client projects. Each developer has personal preferences (editor keybindings), the firm has firm-wide coding standards, and each client project has its own conventions. What's the correct configuration architecture?",
+      "options": [
+        "User ~/.claude/CLAUDE.md for personal preferences; project CLAUDE.md for firm-wide standards and client conventions; directory-level CLAUDE.md or path-scoped rules for subsystem rules",
+        "A single CLAUDE.md at the root of each project containing all configuration levels with clear section headings",
+        "User ~/.claude/CLAUDE.md for everything, using @ path imports to pull in project-specific files from each repo",
+        "Put firm-wide standards in the user-level file so they load for every session automatically"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "claude-md-hierarchy",
+      "question": "Why is putting shared, firm-wide standards in a user-level (~/.claude/CLAUDE.md) file the wrong choice for a multi-developer consultancy?",
+      "options": [
+        "User-level CLAUDE.md applies only to that individual developer and isn't shared via version control, so a colleague cloning the project never receives it",
+        "User-level CLAUDE.md always loads after project-level files, so it would be overridden anyway",
+        "User-level CLAUDE.md has a hard character limit too small for firm-wide standards",
+        "User-level CLAUDE.md can only contain hook configuration, not conventions"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "plan-mode-vs-direct-execution",
+      "question": "A team is debugging a complex distributed-system issue: exploring logs, tracing request flows, forming hypotheses, with no changes to the codebase yet. Partway through, they identify a one-line config fix and want to apply it immediately. What's the optimal workflow?",
+      "options": [
+        "Start in plan mode for investigation, then switch to direct execution for the one-line fix once identified",
+        "Use direct execution throughout, with detailed upfront instructions describing the investigation process and potential fixes",
+        "Use plan mode for the entire session, including the one-line fix, to maintain consistency",
+        "Restrict to read-only tools for investigation, then start an entirely new session with write permissions for the fix"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q4",
+      "topic": "plan-mode-vs-direct-execution",
+      "question": "Why is starting a brand-new session for a one-line fix (after investigating in plan mode within the same session) the wrong move?",
+      "options": [
+        "A new session would lose all the investigation context (log analysis, request tracing, hypothesis formation) that led to identifying the fix",
+        "Plan mode can never transition to direct execution within Claude Code",
+        "New sessions default to bypassPermissions mode, which is unsafe for a production fix",
+        "Starting a new session always regenerates the CLAUDE.md hierarchy from scratch"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q5",
+      "topic": "hard-rules-belong-in-hooks",
+      "question": "What's the guidance for a hard, non-negotiable rule like 'never push to main'?",
+      "options": [
+        "It belongs in a pre-tool-use hook, not CLAUDE.md — the hook can actually stop the action, CLAUDE.md can only ask",
+        "It should be repeated at the top of CLAUDE.md in all caps for emphasis",
+        "It should go in the project's README instead of any Claude Code configuration",
+        "It doesn't matter where it lives as long as it's mentioned somewhere"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q6",
+      "topic": "effective-claude-md-rules",
+      "question": "Which CLAUDE.md rule is written effectively, per the guidance that rules should be specific and checkable?",
+      "options": [
+        "\"Put new API routes in src/api/handlers, one per file\"",
+        "\"Follow best practices for API design\"",
+        "\"Don't use default exports\" (with no alternative named)",
+        "\"Be careful with API routes\""
+      ],
+      "answer_index": 0
+    }
+  ]
+}
