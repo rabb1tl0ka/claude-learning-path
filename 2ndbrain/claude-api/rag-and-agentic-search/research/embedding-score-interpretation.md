@@ -1,0 +1,9 @@
+Research note, requested by Bruno during the [text-embeddings](../text-embeddings.md) session: what do individual embedding score values mean, and does the sign (+/-) carry directional information?
+
+## Findings
+
+- An embedding is a dense vector output by a neural network — each dimension is a *learned* feature shaped by training (typically contrastive learning on massive text pairs), not a hand-assigned axis someone labeled "happiness" or "topic X." Nobody designs dimension 47 to mean anything specific in advance.
+- Because of this, no single number in the vector has a stable, human-interpretable meaning on its own, and there's no general rule that positive vs. negative carries a consistent direction (e.g. "positive = more of X") — that mapping isn't guaranteed to exist, and even if some direction is found for one model, it won't transfer to a different embedding model or provider.
+- What *is* meaningful: the vector as a whole, compared to another full vector via cosine similarity or dot product. That comparison is exactly what the model is trained to make meaningful — semantically similar texts end up with high similarity scores, regardless of what any individual component means.
+- The course's "medical / software engineering" 2-dimension toy example (each axis pre-labeled) is a simplification purely for teaching intuition — real embedding models don't expose interpretable axes like that. Making individual dimensions interpretable is itself an open research area (e.g. sparse-autoencoder/"features" work), well beyond what you get from calling an embedding API.
+- Practical takeaway for the RAG pipeline: this doesn't block anything — you never read or reason about individual embedding values. You only ever compare whole vectors via similarity, which is reliable and is the actual mechanism the pipeline depends on.

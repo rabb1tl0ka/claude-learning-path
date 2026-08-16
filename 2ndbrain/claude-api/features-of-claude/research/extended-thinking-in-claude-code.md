@@ -1,0 +1,9 @@
+Research note, requested by Bruno during the [extended-thinking](../extended-thinking.md) session: is extended thinking available in Claude Code (the CLI), not just the raw Claude API?
+
+## Findings
+
+- Yes, functionally — but it's surfaced very differently than the API parameters covered in this chapter (`thinking: true`, `thinking_budget`, `max_tokens`).
+- In Claude Code, extended thinking isn't a flag you set in code. It's triggered through natural-language cues in your prompt — phrases like "think", "think hard", "think harder", and "ultrathink" progressively increase the thinking token budget Claude Code allocates for that turn.
+- There's also a model-level **reasoning effort** setting (low/medium/high/etc., depending on the interface) that some Claude Code configurations expose, which similarly controls how much internal reasoning budget the model uses before responding — conceptually the same tradeoff (cost/latency vs. accuracy) as the API's `thinking_budget`, just controlled at a different layer (session/model config or prompt phrasing) instead of a per-request parameter you write yourself.
+- The underlying mechanism (a thinking block generated before the final response, cryptographic signature, occasional redacted-thinking blocks) is the same Claude model behavior described in this chapter — Claude Code is a client built on top of the same Messages API, it just abstracts the raw `thinking`/`budget_tokens` params behind these higher-level triggers so you don't hand-write them yourself.
+- Practical takeaway: you don't need to (and can't directly) set `thinking_budget` inside a Claude Code session the way you do calling the API directly in a notebook — instead you influence it through how you phrase the request or through whatever effort/thinking setting the specific Claude Code interface exposes.
