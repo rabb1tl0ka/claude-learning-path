@@ -6,16 +6,16 @@ introductory foundation toward Claude Partner Network certification.
 
 ## Goal
 
-Complete all 4 courses, then sit the certification exam.
+Complete all 4 courses, then prepare with practice exams, then sit the certification exam.
 
 ## Courses
 
 | # | Course | Status | Course dir name |
 |---|--------|--------|------------------|
 | 1 | Introduction to agent skills | Complete | `claude-code-agent-skills` |
-| 2 | Building with the Claude API | In progress | `claude-api` |
-| 3 | Introduction to Model Context Protocol | Not started | `model-context-protocol` |
-| 4 | Claude Code in Action | Not started | `claude-code-in-action` |
+| 2 | Building with the Claude API | Complete | `claude-api` |
+| 3 | Introduction to Model Context Protocol | Complete | `model-context-protocol` |
+| 4 | Claude Code in Action | Complete | `claude-code-in-action` |
 
 ## Directory naming convention
 
@@ -33,9 +33,15 @@ e.g. `claude-api`, `what-are-skills.md` — never `Claude API` or `What Are Skil
   course dir names in `2ndbrain/` 1:1 (e.g. `code/claude-api/` pairs with
   `2ndbrain/claude-api/`), but only gets populated for chapters that actually
   involve writing code — don't pre-create empty chapter dirs.
+- `2ndbrain/exam-prep/` — practice-exam attempts and mistake reviews ahead of
+  the actual certification exam. All 4 courses are done, so this is the
+  current phase of the repo. Lives inside `2ndbrain/` (not a sibling of it)
+  specifically so exam prep can draw on the accumulated chapter notes and
+  research from the other course dirs, rather than starting from a blank
+  slate — see `2ndbrain/CLAUDE.md` for how it's organized.
 
 ## Progress
 
-**Current course:** Building with the Claude API (`claude-api`)
+**Current phase:** Exam prep (`2ndbrain/exam-prep/`) — all 4 courses complete, working through practice tests before sitting the certification exam.
 
-Update this table and the "Current course" line whenever a course status changes.
+Update this table and the "Current phase" line whenever a course status changes or the exam is sat.

@@ -16,10 +16,13 @@ for the overall project structure and course list.
 - If the course has no TOC file, or the TOC has no `section` field, chapter
   notes live directly in the course directory (flat), kebab-case filename
   (e.g. `claude-code-agent-skills/what-are-skills.md`).
-- Standalone ad-hoc research notes not tied to one specific lesson (see
-  **Handling `owner: claude` actions** in the `learning-recap` skill) live
-  loose at the course directory root, not inside any section folder, since
-  they don't correspond to a single TOC entry.
+- Standalone ad-hoc research notes (see **Handling `owner: claude` actions**
+  in the `learning-recap` skill) always live in a `research/` subdirectory,
+  never loose alongside chapter notes: `<section-dir>/research/<note>.md` when
+  a section applies (e.g. `tool-use-with-claude/research/tool-loading-strategy.md`),
+  or `<course-dir>/research/<note>.md` at the course root when the note isn't
+  tied to one specific lesson (no section to nest it under). This keeps each
+  section/course dir's top level to just its chapter notes.
 
 ## Per-chapter workflow
 
@@ -75,7 +78,19 @@ repo root gives a consolidated view of every open action across all chapters.
 
 ## Progress
 
-**Current course:** Building with the Claude API (`claude-api`)
+**Current course:** Claude Code in Action (`claude-code-in-action`) — Complete. All 4 courses are now done; the repo is moving into an exam-prep phase, tracked in `exam-prep/` (a child of `2ndbrain/`, not a course dir — see root `CLAUDE.md`). It lives here rather than as a sibling of `2ndbrain/` specifically so exam prep can pull on the chapter notes and research already built up across the other course dirs.
+
+**Building with the Claude API — Complete** (all sections finished, see chapter list below).
+
+**Introduction to Model Context Protocol — Complete.** A standalone course on the
+Claude Partner Network Learning Path (skilljar id `303756`), distinct from the
+`claude-api` course. Note: `claude-api/model-context-protocol/mcp-overview.md`
+covers MCP as a *section within the Building with the Claude API course* and is
+unrelated to this course. This course was consumed in a single session (Bruno
+found it duplicated the `claude-api` MCP section and blew through it, including
+its final assessment) — see
+`model-context-protocol/course-overview-and-assessment.md` for the one whole-course
+chapter note.
 
 **Chapters completed:**
 - [x] What are Skills — `claude-code-agent-skills/what-are-skills.md`
@@ -104,6 +119,40 @@ repo root gives a consolidated view of every open action across all chapters.
 - [x] The text edit tool — `claude-api/tool-use-with-claude/text-editor-tool.md`
 - [x] The web search tool — `claude-api/tool-use-with-claude/web-search-tool.md`
 - [x] Quiz on tool use with Claude — `claude-api/tool-use-with-claude/quiz-on-tool-use-with-claude.md`
+- [x] Introducing Retrieval Augmented Generation — `claude-api/rag-and-agentic-search/introducing-retrieval-augmented-generation.md`
+- [x] Text chunking strategies — `claude-api/rag-and-agentic-search/text-chunking-strategies.md`
+- [x] Text embeddings — `claude-api/rag-and-agentic-search/text-embeddings.md`
+- [x] The full RAG flow — `claude-api/rag-and-agentic-search/the-full-rag-flow.md`
+- [x] Implementing the RAG flow — `claude-api/rag-and-agentic-search/implementing-the-rag-flow.md`
+- [x] BM25 lexical search — `claude-api/rag-and-agentic-search/bm25-lexical-search.md`
+- [x] A Multi-Index RAG pipeline — `claude-api/rag-and-agentic-search/a-multi-index-rag-pipeline.md`
+- [x] Extended thinking — `claude-api/features-of-claude/extended-thinking.md`
+- [x] Image support — `claude-api/features-of-claude/image-support.md`
+- [x] PDF support — `claude-api/features-of-claude/pdf-support.md`
+- [x] Citations — `claude-api/features-of-claude/citations.md`
+- [x] Prompt caching — `claude-api/features-of-claude/prompt-caching.md`
+- [x] Rules of prompt caching — `claude-api/features-of-claude/rules-of-prompt-caching.md`
+- [x] Prompt caching in action — `claude-api/features-of-claude/prompt-caching-in-action.md`
+- [x] Code execution and the Files API — `claude-api/features-of-claude/code-execution-and-the-files-api.md`
+- [x] Quiz on features of Claude — `claude-api/features-of-claude/quiz-on-features-of-claude.md`
+- [x] Introducing MCP — `claude-api/model-context-protocol/mcp-overview.md`
+- [x] MCP clients — `claude-api/model-context-protocol/mcp-overview.md`
+- [x] Project setup — `claude-api/model-context-protocol/mcp-overview.md`
+- [x] Defining tools with MCP — `claude-api/model-context-protocol/mcp-overview.md`
+- [x] The server inspector — `claude-api/model-context-protocol/mcp-overview.md`
+- [x] Implementing a client — `claude-api/model-context-protocol/mcp-overview.md`
+- [x] Defining resources — `claude-api/model-context-protocol/mcp-overview.md`
+- [x] Accessing resources — `claude-api/model-context-protocol/mcp-overview.md`
+- [x] Defining prompts — `claude-api/model-context-protocol/mcp-overview.md`
+- [x] Prompts in the client — `claude-api/model-context-protocol/mcp-overview.md`
+- [x] MCP review — `claude-api/model-context-protocol/mcp-overview.md`
+- [x] Quiz on Model Context Protocol — `claude-api/model-context-protocol/mcp-overview.md`
+- [x] Anthropic apps — `claude-api/anthropic-apps-claude-code-and-computer-use/anthropic-apps.md`
+- [x] Agents and workflows (covers Agents and workflows, Parallelization workflows, Chaining workflows, Routing workflows, Agents and tools, Environment inspection, Workflows vs agents, Quiz on Agents and Workflows) — `claude-api/agents-and-workflows/agents-and-workflows.md`
+- [x] Final Assessment and Course Wrap Up — `claude-api/final-assessment-and-wrap-up.md` (last chapter of the `claude-api` course — course marked Complete)
+- [x] Long-running sessions, steering, and CLAUDE.md configuration (covers long session management/scoping, rewind, goal, loop, worktrees, CLAUDE.md configuration) — `claude-code-in-action/long-sessions-and-steering.md`
+- [x] Automating and verifying work (covers verification skills, permission modes, auto mode, hooks, verifying unsupervised runs) — `claude-code-in-action/automating-and-verifying-work.md`
+- [x] Sharing and scaling Claude Code (covers routines, headless mode, agent SDK, automated PR reviews, plugins, and the course's final assessment) — `claude-code-in-action/sharing-and-scaling-claude-code.md`
 
 Update this section whenever a new chapter note is completed: mark it `[x]`, add
 the file link, and update "Current course" when moving to the next course.
