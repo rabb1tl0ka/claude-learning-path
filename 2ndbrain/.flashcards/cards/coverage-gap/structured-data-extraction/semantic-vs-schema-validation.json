@@ -1,0 +1,79 @@
+{
+  "course": "Coverage gap",
+  "chapter": "structured-data-extraction",
+  "generated": "2026-08-17",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "semantic-vs-schema-validation",
+      "question": "What does schema (type) validation check?",
+      "options": [
+        "Whether the content makes business/logical sense",
+        "Whether each extracted field has the correct structural shape/type (e.g. is a date a valid date, is amount a number)",
+        "Whether the model's confidence score exceeds a threshold",
+        "Whether the source document was OCR'd correctly"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q2",
+      "topic": "semantic-vs-schema-validation",
+      "question": "An invoice's line items are all well-typed numbers, and the stated total is also a valid number, but they sum to £450 instead of the stated £500. What catches this?",
+      "options": [
+        "Schema validation, since it checks all numeric fields",
+        "Semantic (business-rule) validation, via an explicit cross-field check",
+        "Nothing catches this — it's an unavoidable extraction error",
+        "The model's confidence score, which would automatically flag it"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q3",
+      "topic": "semantic-vs-schema-validation",
+      "question": "Why is 'it validated against the Pydantic model, ship it' an incomplete stopping point for a team?",
+      "options": [
+        "Pydantic models can't validate numeric fields",
+        "Schema validation passing only proves the extraction is well-formed, not that it's correct",
+        "Pydantic validation is deprecated in favor of JSON Schema",
+        "It means the extraction definitely contains a fabricated value"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q4",
+      "topic": "semantic-vs-schema-validation",
+      "question": "In Pydantic, what construct typically implements cross-field semantic validation after individual field validation passes?",
+      "options": [
+        "A `@model_validator` that runs after field-level validation and checks relationships between fields",
+        "A `@field_validator` applied to each field independently",
+        "The JSON Schema `type` keyword",
+        "A separate database migration script"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q5",
+      "topic": "semantic-vs-schema-validation",
+      "question": "How do semantic validation error messages connect to retry-with-error-feedback?",
+      "options": [
+        "They don't connect — retries only use schema validation errors",
+        "A specific message like 'line items sum to £450, stated total is £500' is exactly the actionable feedback the retry loop needs, unlike a generic 'validation failed'",
+        "Semantic validation errors are used only for logging, never for retries",
+        "Retry-with-error-feedback only applies before any validation runs"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q6",
+      "topic": "semantic-vs-schema-validation",
+      "question": "Why does semantic validation scale with effort rather than tooling?",
+      "options": [
+        "Business rules are domain-specific and have to be hand-enumerated for each extraction schema; there's no generic way to auto-derive them",
+        "Semantic validation requires a GPU cluster to run",
+        "It can be fully auto-generated from the JSON Schema definition",
+        "It only applies to financial documents, so effort is always minimal"
+      ],
+      "answer_index": 0
+    }
+  ]
+}

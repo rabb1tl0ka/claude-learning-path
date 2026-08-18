@@ -1,0 +1,79 @@
+{
+  "course": "Coverage gap",
+  "chapter": "structured-data-extraction",
+  "generated": "2026-08-17",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "structured-claim-source-mapping",
+      "question": "Why is inline prose citation (e.g. 'According to page 12...') fragile in a multi-step pipeline?",
+      "options": [
+        "It takes up too much storage space",
+        "Downstream steps like summarization, re-templating, or merging can silently drop or detach the citation since nothing structurally binds it to the claim",
+        "Prose citations are not supported by the Claude API at all",
+        "It's fragile only when the source is a PDF, not other formats"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q2",
+      "topic": "structured-claim-source-mapping",
+      "question": "What is the robust alternative to inline prose citation for preserving attribution?",
+      "options": [
+        "A separate lookup database matched by claim ID",
+        "Structured claim-source pairs: each finding is its own record with the claim and source metadata (URL, document, page, date) in separate fields",
+        "Always quoting the source verbatim inside the claim text",
+        "Storing only the source URL and discarding the specific claim text"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q3",
+      "topic": "structured-claim-source-mapping",
+      "question": "Why does keeping source metadata in separate fields (rather than inline in the claim text) survive downstream transformation?",
+      "options": [
+        "Because separate fields are automatically excluded from summarization",
+        "Because the source travels with the claim as structured data rather than as text that must be parsed back out",
+        "Because the Claude API automatically re-attaches citations to summaries",
+        "Because structured fields can't be edited by downstream code"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q4",
+      "topic": "structured-claim-source-mapping",
+      "question": "How does the structured claim-source pattern handle two sources that disagree on a value?",
+      "options": [
+        "It always picks the more recent source and discards the other",
+        "It keeps both claim-source records intact so a downstream consumer can weigh recency or authority themselves",
+        "It averages the two conflicting values automatically",
+        "It flags the entire document as invalid"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q5",
+      "topic": "structured-claim-source-mapping",
+      "question": "How does this pattern relate to Claude's actual citations API feature?",
+      "options": [
+        "They are unrelated — citations API is only for chat, not pipelines",
+        "The citations API already returns structured citation objects mapping generated text to source locations, which is the same design principle generalized",
+        "The citations API replaces the need for structured claim-source pairs entirely in every pipeline",
+        "Structured claim-source mapping was deprecated in favor of the citations API"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q6",
+      "topic": "structured-claim-source-mapping",
+      "question": "When is the overhead of structured claim-source pairs least likely to be worth it?",
+      "options": [
+        "When the output feeds further synthesis or merging by other systems",
+        "For genuinely single-shot, human-read-once outputs that nothing downstream will reprocess",
+        "When there are multiple conflicting sources for the same claim",
+        "When the pipeline needs to catch semantic validation errors"
+      ],
+      "answer_index": 1
+    }
+  ]
+}

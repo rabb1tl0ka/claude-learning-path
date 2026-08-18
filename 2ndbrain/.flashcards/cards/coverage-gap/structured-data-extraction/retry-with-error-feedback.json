@@ -1,0 +1,79 @@
+{
+  "course": "Coverage gap",
+  "chapter": "structured-data-extraction",
+  "generated": "2026-08-17",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "retry-with-error-feedback",
+      "question": "Why does simply resending the identical prompt after a validation failure tend not to work?",
+      "options": [
+        "The API rate-limits identical requests",
+        "A prompt that reliably produces a failing output tends to reproduce the same failure again",
+        "Claude caches responses and will always return the same answer",
+        "Identical prompts are rejected by the API automatically"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q2",
+      "topic": "retry-with-error-feedback",
+      "question": "What should a retry request include to give the model a real chance to self-correct?",
+      "options": [
+        "Just a generic 'validation failed, try again' message",
+        "The original document plus the failed attempt and the specific validation error that occurred",
+        "A completely different prompt unrelated to the original task",
+        "A higher temperature setting to encourage variation"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q3",
+      "topic": "retry-with-error-feedback",
+      "question": "What is the hard boundary on what retry-with-error-feedback can fix?",
+      "options": [
+        "It can only fix errors in numeric fields, never text fields",
+        "It cannot conjure information that is genuinely absent from the source document",
+        "It only works for the first retry attempt, never subsequent ones",
+        "It can only be used with schema validation, never semantic validation"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q4",
+      "topic": "retry-with-error-feedback",
+      "question": "What's a risk of relying on retries alone when a required field is genuinely missing from the source document?",
+      "options": [
+        "The pipeline runs out of memory",
+        "The model may fabricate a plausible-looking value just to satisfy retry pressure and pass validation",
+        "The API will return a permanent error and stop working",
+        "The document gets permanently corrupted"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q5",
+      "topic": "retry-with-error-feedback",
+      "question": "In a well-designed pipeline, which check should run first to handle the 'information genuinely absent from source' case efficiently?",
+      "options": [
+        "A cheap deterministic/keyword presence check on the source, with the retry loop as the fallback for what it can't resolve",
+        "An unlimited retry loop with no cap, since eventually it will succeed",
+        "A second LLM call to double-check the first model's confidence",
+        "Immediately escalate every failure to a human reviewer without any automated check"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q6",
+      "topic": "retry-with-error-feedback",
+      "question": "Why can't a naive keyword/literal presence check on the source document be trusted alone to detect missing fields?",
+      "options": [
+        "It's too slow to run at scale",
+        "OCR noise, label variants, and non-literal/derived fields can all produce false negatives",
+        "It requires a separate paid API call every time",
+        "It only works for numeric fields, not text fields"
+      ],
+      "answer_index": 1
+    }
+  ]
+}

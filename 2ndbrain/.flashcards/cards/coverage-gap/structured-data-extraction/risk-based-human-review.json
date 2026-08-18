@@ -1,0 +1,79 @@
+{
+  "course": "Coverage gap",
+  "chapter": "structured-data-extraction",
+  "generated": "2026-08-17",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "risk-based-human-review",
+      "question": "Why does a uniform review percentage (e.g. review 10% of everything) fail in practice?",
+      "options": [
+        "It wastes reviewer time on low-risk types while under-reviewing high-risk ones",
+        "10% is always statistically insignificant regardless of context",
+        "Uniform percentages are illegal under data protection regulations",
+        "It requires more reviewers than any team can staff"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "risk-based-human-review",
+      "question": "What two factors define 'risk' in risk-based human review allocation?",
+      "options": [
+        "Document length and file format",
+        "The consequence of an error and the likelihood of an error",
+        "Processing cost and processing time",
+        "Model confidence alone, nothing else"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q3",
+      "topic": "risk-based-human-review",
+      "question": "What review pattern should apply to the highest-risk document categories (e.g. payment instructions, legal documents)?",
+      "options": [
+        "A small stratified sample, same as low-risk categories",
+        "100% human review regardless of the reported confidence score",
+        "No review at all, since they are processed too rarely to matter",
+        "Review only when confidence drops below 50%"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q4",
+      "topic": "risk-based-human-review",
+      "question": "Within the set of items actually selected for review, what determines which gets reviewed first?",
+      "options": [
+        "Strict first-in-first-out order, regardless of confidence",
+        "Alphabetical order by document name",
+        "Dynamic queue-based prioritization favoring lowest confidence / worst historical accuracy for that stratum",
+        "Random shuffling to ensure fairness across reviewers"
+      ],
+      "answer_index": 2
+    },
+    {
+      "id": "q5",
+      "topic": "risk-based-human-review",
+      "question": "How do confidence calibration and stratified sampling feed into risk-based review allocation?",
+      "options": [
+        "They are unrelated processes that happen independently",
+        "Calibration tells you what confidence really means, and sampling tells you if accuracy holds over time — review allocation turns those signals into a staffing decision",
+        "Risk-based review replaces the need for both calibration and sampling",
+        "Only stratified sampling matters; calibration has no bearing on review allocation"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q6",
+      "topic": "risk-based-human-review",
+      "question": "Why does an all-or-nothing review split (fully automate some types, fully manual-review others) fall short?",
+      "options": [
+        "It's more expensive than reviewing everything manually",
+        "It ignores per-extraction confidence variation within a type and doesn't adapt as accuracy changes over time",
+        "It requires more computing power than risk-based allocation",
+        "It's not compatible with schema validation"
+      ],
+      "answer_index": 1
+    }
+  ]
+}

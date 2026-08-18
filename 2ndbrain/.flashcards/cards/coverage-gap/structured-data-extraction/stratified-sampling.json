@@ -1,0 +1,79 @@
+{
+  "course": "Coverage gap",
+  "chapter": "structured-data-extraction",
+  "generated": "2026-08-17",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "stratified-sampling",
+      "question": "What question does stratified sampling answer that confidence calibration does not?",
+      "options": [
+        "Is this pipeline good enough to turn automation on in the first place?",
+        "Is the pipeline still good, right now, on the documents actually flowing through production?",
+        "What should the initial confidence threshold be set to?",
+        "How many reviewers should be hired?"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q2",
+      "topic": "stratified-sampling",
+      "question": "Why is it critical that stratified sampling include high-confidence, auto-approved extractions and not just low-confidence ones already under review?",
+      "options": [
+        "High-confidence extractions are always wrong, so they need extra scrutiny",
+        "A new systematic error pattern could produce high self-reported confidence and sail through auto-approval completely unnoticed otherwise",
+        "Low-confidence extractions never need sampling since they're already reviewed",
+        "Sampling only high-confidence items is cheaper computationally"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q3",
+      "topic": "stratified-sampling",
+      "question": "What kind of real-world change is stratified sampling designed to catch that calibration alone can't anticipate?",
+      "options": [
+        "Changes in reviewer headcount",
+        "Drift such as a new vendor layout, OCR degradation, or a model change producing a new error pattern",
+        "Changes in the company's org chart",
+        "Fluctuations in document file size"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q4",
+      "topic": "stratified-sampling",
+      "question": "Which best characterizes the calibration vs. stratified sampling distinction for exam purposes?",
+      "options": [
+        "Calibration = continuous production monitoring; sampling = one-time validation set check",
+        "Calibration = static/periodic, done before or independent of live traffic; sampling = continuous, done against live production traffic",
+        "They are interchangeable terms for the same process",
+        "Calibration only applies to text fields; sampling only applies to numeric fields"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q5",
+      "topic": "stratified-sampling",
+      "question": "What is a common concrete stratified sampling pattern mentioned for allocating sample rates?",
+      "options": [
+        "Sample 100% of everything to guarantee no drift is missed",
+        "Sample 5-10% of overall volume, weighted more heavily (e.g. 20%) toward higher-risk strata",
+        "Sample only once per year regardless of volume",
+        "Sample only the lowest-confidence 1% of extractions"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q6",
+      "topic": "stratified-sampling",
+      "question": "What's a limitation of stratified sampling even when strata are well-chosen?",
+      "options": [
+        "It cannot detect drift within a document type it already tracks",
+        "It only catches drift in the strata being tracked — a genuinely new, unseen document type may not get sampled at the right rate until someone adds it as its own stratum",
+        "It requires disabling automation entirely while sampling runs",
+        "It is redundant once confidence calibration has been done once"
+      ],
+      "answer_index": 1
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "course": "Coverage gap",
+  "chapter": "tool-use-with-claude",
+  "generated": "2026-08-17",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "tool-choice-forcing",
+      "question": "What does `tool_choice: auto` mean in the Claude API?",
+      "options": [
+        "Claude must call some tool, but can pick which one",
+        "Claude decides for itself whether calling a tool is appropriate, and if so, which one",
+        "Claude is forced to call a specific named tool",
+        "Claude is prevented from calling any tool"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q2",
+      "topic": "tool-choice-forcing",
+      "question": "What is the difference between `tool_choice: any` and `tool_choice` with a specific tool `name`?",
+      "options": [
+        "There is no difference, they behave identically",
+        "`any` forces some tool call but lets Claude pick which one; a named tool forces that exact tool regardless of what the input suggests",
+        "`any` prevents tool calls entirely; a named tool allows any tool",
+        "`any` only works with a single tool defined; named tool_choice requires multiple tools"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q3",
+      "topic": "tool-choice-forcing",
+      "question": "In a structured-extraction step where a free-text answer would break the downstream pipeline, which `tool_choice` approach fits best?",
+      "options": [
+        "`none`, so Claude responds in plain prose only",
+        "Forcing a specific tool (or `any`) for that turn so Claude can't just respond in prose instead",
+        "Leaving it on `auto` for every turn of the conversation",
+        "Removing all tools from the request"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q4",
+      "topic": "tool-choice-forcing",
+      "question": "What is the common pattern for using forced tool_choice across a multi-turn conversation?",
+      "options": [
+        "Keep tool_choice forced for the entire conversation to guarantee structured output at every turn",
+        "Force a specific tool for exactly the one turn that needs it, then switch back to `auto` afterward",
+        "Force a tool only on the last turn of the conversation",
+        "Never use forced tool_choice in multi-turn conversations"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q5",
+      "topic": "tool-choice-forcing",
+      "question": "What goes wrong if `tool_choice` is left forced across an entire multi-turn conversation rather than switched back to `auto`?",
+      "options": [
+        "Nothing, it's always safe to leave forced indefinitely",
+        "Claude would never be able to respond in plain text again for the rest of the conversation",
+        "The API would start rejecting all subsequent requests",
+        "Claude would ignore the forced tool after the first turn anyway"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q6",
+      "topic": "tool-choice-forcing",
+      "question": "What does `tool_choice: none` do?",
+      "options": [
+        "Removes all tools from the request payload",
+        "Claude must not call a tool on this turn, even if one is available and would normally be used",
+        "Claude must call every available tool at once",
+        "It has the same effect as omitting tool_choice entirely"
+      ],
+      "answer_index": 1
+    }
+  ]
+}

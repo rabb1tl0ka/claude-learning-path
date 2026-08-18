@@ -1,0 +1,79 @@
+{
+  "course": "Coverage gap",
+  "chapter": "structured-data-extraction",
+  "generated": "2026-08-17",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "aggregate-metrics-trap",
+      "question": "A pipeline reports 97% overall extraction accuracy. Why is this number alone dangerous for deciding whether to automate?",
+      "options": [
+        "It's a volume-weighted average that can hide a low-accuracy, low-volume segment behind a high-accuracy, high-volume one",
+        "It's always calculated incorrectly by most pipelines",
+        "It only reflects schema validation, never semantic validation",
+        "97% is too high to be realistic, so the number is probably fabricated"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "aggregate-metrics-trap",
+      "question": "What is the recommended fix before trusting an aggregate accuracy number enough to act on it?",
+      "options": [
+        "Round it down by a safety margin before using it",
+        "Break it down by document type, by field, and by the cross of both",
+        "Re-run the same eval set three times and average the results",
+        "Ignore it and rely only on confidence calibration"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q3",
+      "topic": "aggregate-metrics-trap",
+      "question": "A pipeline automates a 99.5%-accurate invoice segment while routing 100% of a 60%-accurate scanned-receipt segment to humans, but reports a single 97% blended figure. What's the problem with that reported number?",
+      "options": [
+        "There is no problem, blending is standard practice",
+        "It papers over a gating decision that should be reflected per-segment, not as one figure",
+        "60% accuracy is impossible for any document type",
+        "The math must be wrong since 97% doesn't match a simple average"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q4",
+      "topic": "aggregate-metrics-trap",
+      "question": "What statistical phenomenon is the aggregate-metrics trap most closely related to?",
+      "options": [
+        "The central limit theorem",
+        "Simpson's-paradox-adjacent aggregation across heterogeneous subgroups",
+        "Survivorship bias in hiring data",
+        "Regression to the mean"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q5",
+      "topic": "aggregate-metrics-trap",
+      "question": "Why can segment-level accuracy numbers themselves be misleading if taken at face value?",
+      "options": [
+        "Segments with small sample sizes can swing wildly (e.g. 60% to 90%) on a single extra correct/incorrect case",
+        "Segment-level numbers are never comparable across document types",
+        "Segmentation always increases the reported accuracy artificially",
+        "Segments can't be defined for structured data pipelines"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q6",
+      "topic": "aggregate-metrics-trap",
+      "question": "The aggregate-metrics trap principle applies to which stages of the extraction pipeline lifecycle?",
+      "options": [
+        "Only the initial extraction step",
+        "Only production monitoring, not calibration or review allocation",
+        "Any stage that produces an accuracy number used to gate a decision — calibration, review sizing, and drift monitoring alike",
+        "Only semantic validation, since schema validation isn't measured in accuracy terms"
+      ],
+      "answer_index": 2
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "course": "Coverage gap",
+  "chapter": "structured-data-extraction",
+  "generated": "2026-08-17",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "confidence-calibration",
+      "question": "Why can't a model's raw self-reported confidence score be trusted as a true probability of correctness?",
+      "options": [
+        "Confidence scores are randomly generated and carry no signal at all",
+        "LLMs tend to be overconfident, with scores clustering high regardless of actual correctness",
+        "Confidence scores only exist for classification tasks, not extraction",
+        "Confidence scores are deprecated in the current Claude API"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q2",
+      "topic": "confidence-calibration",
+      "question": "What does confidence calibration actually require to build a valid confidence-to-accuracy mapping?",
+      "options": [
+        "A labelled validation set with known ground-truth answers to compare extractions against",
+        "Access to the model's internal weights",
+        "A larger context window to include more examples",
+        "A second, more powerful model to cross-check the first"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "confidence-calibration",
+      "question": "Why is a single blanket threshold like 'auto-approve above 0.85 confidence' usually a mistake?",
+      "options": [
+        "0.85 is always too low as a threshold for any pipeline",
+        "Calibration mappings differ per field type (and often per document type), so one threshold is too loose for some fields and too strict for others",
+        "Thresholds should always be set at exactly 0.9 by convention",
+        "Confidence scores can't be compared across different fields at all"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q4",
+      "topic": "confidence-calibration",
+      "question": "If confidence calibration reveals that a field's real accuracy is low, what does that tell you?",
+      "options": [
+        "The calibration process itself is broken and should be redone with more data",
+        "It's a diagnosis, not a fix — improving real accuracy requires separate work like prompting, context, or fine-tuning",
+        "The field should be removed from the schema entirely",
+        "The model needs to be replaced with a different provider"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q5",
+      "topic": "confidence-calibration",
+      "question": "Why does calibration need to be redone when the pipeline encounters a new document layout it hasn't seen before?",
+      "options": [
+        "New layouts always cause a total pipeline crash",
+        "The confidence-to-accuracy mapping was learned on prior formats and may not hold on the new one until re-checked against ground truth",
+        "Calibration is a one-time process that never needs revisiting once set",
+        "New layouts always increase measured accuracy automatically"
+      ],
+      "answer_index": 1
+    },
+    {
+      "id": "q6",
+      "topic": "confidence-calibration",
+      "question": "How does confidence calibration relate to stratified sampling in the extraction pipeline lifecycle?",
+      "options": [
+        "They are the same technique described with different names",
+        "Calibration is a static/periodic gate done before or independent of live traffic; stratified sampling is the ongoing monitoring of live production traffic afterward",
+        "Stratified sampling replaces the need for calibration entirely",
+        "Calibration only applies after stratified sampling has been running for a while"
+      ],
+      "answer_index": 1
+    }
+  ]
+}
