@@ -4,7 +4,7 @@ Grounded in your own chapter notes. Highest-impact topics first — repeat misse
 
 ## 1. Coordinator context-passing in multi-agent systems (missed in try 1 *and* try 2 — 3 total misses, 100% wrong-rate)
 
-**Core theory** (from `claude-api/agents-and-workflows/agents-and-workflows.md`): in a hub-and-spoke architecture, subagents don't share memory or communicate directly — the coordinator is the only thing that sees every subagent's output. If a downstream agent is missing information a sibling already produced, the fault is almost always the **coordinator failing to forward it as context**, not the downstream agent's own prompt or the upstream agent's output quality.
+**Core theory** (from `ccaf-learning/claude-api/agents-and-workflows/agents-and-workflows.md`): in a hub-and-spoke architecture, subagents don't share memory or communicate directly — the coordinator is the only thing that sees every subagent's output. If a downstream agent is missing information a sibling already produced, the fault is almost always the **coordinator failing to forward it as context**, not the downstream agent's own prompt or the upstream agent's output quality.
 
 **This is the same exact question you missed in try 1** ("A synthesis agent produces a report with several claims that have no source attribution...") — word-for-word identical, and you got it wrong again. This is the strongest signal in either attempt: the concept isn't sticking on repetition alone.
 
@@ -22,7 +22,7 @@ Grounded in your own chapter notes. Highest-impact topics first — repeat misse
 
 ## 3. Tool description quality as the actual fix for tool-selection failures (2 misses across both attempts, 100% wrong-rate)
 
-**Core theory** (from `claude-api/tool-use-with-claude/introducing-tool-use.md`): the tool-description guidance — 3-4 sentences covering what a tool does, when to use it, what it returns — reads almost identically to how a Skill or Agent description gets written in Claude Code. Same purpose, same failure mode if it's vague: an agent that defaults to a familiar general-purpose tool (Bash) over a purpose-built one (an MCP `query_database` tool) usually isn't broken — its description just isn't giving the model enough reason to prefer it.
+**Core theory** (from `ccaf-learning/claude-api/tool-use-with-claude/introducing-tool-use.md`): the tool-description guidance — 3-4 sentences covering what a tool does, when to use it, what it returns — reads almost identically to how a Skill or Agent description gets written in Claude Code. Same purpose, same failure mode if it's vague: an agent that defaults to a familiar general-purpose tool (Bash) over a purpose-built one (an MCP `query_database` tool) usually isn't broken — its description just isn't giving the model enough reason to prefer it.
 
 **This session's miss**: an MCP server's `query_database` tool for Snowflake gets ignored in favor of raw Bash+CLI calls, even though the MCP tool returns richer structured data. You reached for a system-prompt instruction telling the agent to prefer the tool — a brittle, per-agent patch — instead of fixing the tool's own sparse description, which is the fix that scales to every agent that might connect to that MCP server.
 
@@ -30,7 +30,7 @@ Grounded in your own chapter notes. Highest-impact topics first — repeat misse
 
 ## 4. Session-state staleness — when to start fresh vs. keep working in place (new this import)
 
-**Core theory** (from `claude-code-in-action/long-sessions-and-steering.md`): `/compact` and rewind exist because long sessions accumulate context that can go stale (a colleague's changes land after you've already read a file) or bulky (a long side-investigation you don't need anymore). The guidance is to actively manage that staleness — summarize what's still valuable, then re-ground in current state — rather than trusting the existing session to self-correct just by re-reading.
+**Core theory** (from `ccaf-learning/claude-code-in-action/long-sessions-and-steering.md`): `/compact` and rewind exist because long sessions accumulate context that can go stale (a colleague's changes land after you've already read a file) or bulky (a long side-investigation you don't need anymore). The guidance is to actively manage that staleness — summarize what's still valuable, then re-ground in current state — rather than trusting the existing session to self-correct just by re-reading.
 
 **This session's miss**: 40-minute-old tool results are stale because a colleague pushed changes to those files. You picked "stay in the current session and ask the agent to re-read the changed files" — but the stale results remain in the context window regardless, so the agent can still reference outdated content alongside the fresh re-read. The correct move is a fresh session seeded with a summary of key findings, then re-reading the changed files from that clean state.
 
@@ -46,7 +46,7 @@ Grounded in your own chapter notes. Highest-impact topics first — repeat misse
 
 ## 6. Hook lifecycle events — knowing which event fires for which moment (new this import)
 
-**Core theory** (from `claude-code-in-action/automating-and-verifying-work.md`'s hooks list): Claude Code fires hooks at specific named lifecycle moments — pre-tool-use, post-tool-use, stop, subagent-stop, and (per that chapter's list) pre-compact/post-compact around compaction specifically. These are fixed, named events, not something you wire up generically against an arbitrary "tool."
+**Core theory** (from `ccaf-learning/claude-code-in-action/automating-and-verifying-work.md`'s hooks list): Claude Code fires hooks at specific named lifecycle moments — pre-tool-use, post-tool-use, stop, subagent-stop, and (per that chapter's list) pre-compact/post-compact around compaction specifically. These are fixed, named events, not something you wire up generically against an arbitrary "tool."
 
 **This session's miss**: archiving the full transcript before `/compact` runs needs a **PreCompact** hook — a dedicated event that fires immediately before compaction. You picked "a PreToolUse hook configured on a built-in 'Compact' tool," inventing a tool that doesn't exist rather than recalling the actual dedicated event for this moment.
 
@@ -73,8 +73,8 @@ These questions don't map to material in this repo's notes. They're real gaps, n
 - **Multi-agent task decomposition as the root cause of incomplete coverage**: "A multi-agent research system produces a report on 'renewable energy technologies' that only covers solar and wind, missing geothermal, tidal, biomass, and nuclear fusion... Where is the root cause?" — the coordinator's own task decomposition (what it assigned subagents to research) is the thing to check first, before assuming a downstream subagent's search or source access failed. Related to, but distinct from, the coordinator-context-passing gap above (topic 1) — that's about *passing* results forward; this is about *assigning* the right scope in the first place.
 
 **2 of this session's misses already have an existing gap-topics note, but weren't seeded into history because `--include-gaps` wasn't passed on this import:**
-- Q16 (structured provenance metadata vs. prose footnotes) → matches `exam-prep/gap-topics/structured-data-extraction/structured-claim-source-mapping.md`
-- Q49 (`tool_choice` forcing by name vs. `tool_choice: 'any'`) → matches `exam-prep/gap-topics/tool-use-with-claude/tool-choice-forcing.md`
+- Q16 (structured provenance metadata vs. prose footnotes) → matches `ccaf-learning/structured-data-extraction/structured-claim-source-mapping.md`
+- Q49 (`tool_choice` forcing by name vs. `tool_choice: 'any'`) → matches `ccaf-learning/tool-choice-forcing/tool-choice-forcing.md`
 
 Rerun the import with `--include-gaps` if you want these two folded into the tracked weak-spot signal instead of sitting outside it.
 

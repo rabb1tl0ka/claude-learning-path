@@ -26,14 +26,14 @@ When a transcript is available, also note, per question, what it reveals about B
 
 Separately from Steps 2-3 (which analyze failure/strength patterns across the whole exam), run two independent checks per question — not a mutually-exclusive 3-way classification, just two yes/no lookups:
 
-- **Course-mapped?** Does the question's actual tested concept get taught by an existing chapter note under one of the 4 completed courses (`2ndbrain/claude-code-agent-skills/`, `claude-api/`, `model-context-protocol/`, `claude-code-in-action/`)? Judge this the same way `/flashcards import`'s Step 2 does — by subject matter, not by whether the exam's own domain label or "where this comes from" citation (if present) sounds similar; a third-party exam site's own lesson numbering is not evidence of official-course coverage. If yes, record which chapter note.
-- **Gap-mapped?** Does it match an existing note under `2ndbrain/exam-prep/gap-topics/**/*.md`? If yes, record which note. (In practice this won't overlap with course-mapped — gap-topics notes exist specifically for material the courses don't cover.)
+- **Course-mapped?** Does the question's actual tested concept get taught by an existing chapter note under one of the 4 completed courses (`2ndbrain/ccaf-learning/claude-code-agent-skills/`, `claude-api/`, `model-context-protocol/`, `claude-code-in-action/`)? Judge this the same way `/flashcards import`'s Step 2 does — by subject matter, not by whether the exam's own domain label or "where this comes from" citation (if present) sounds similar; a third-party exam site's own lesson numbering is not evidence of official-course coverage. If yes, record which chapter note.
+- **Gap-mapped?** Does it match an existing note under `2ndbrain/ccaf-learning/**/*.md` that isn't one of the 4 course dirs (a promoted gap-topic dir, e.g. `ccaf-learning/structured-data-extraction/`)? If yes, record which note. (In practice this won't overlap with course-mapped — gap-topic notes exist specifically for material the courses don't cover.)
 
 Questions that are neither don't need a label or a bucket of their own — they're just not part of either report below, and discovering whether they deserve a *new* gap-topics note is `/flashcards import`'s job (its Step 3), not this skill's. Don't create new gap-topics notes here, and don't force a course match just to give every question a home.
 
-**Course-mapped accuracy is the headline metric that actually predicts real CCA-F readiness** — the actual certification exam is scoped to the official learning path only (per `exam-prep/CLAUDE.md`), so the overall score (which mixes in everything a broader third-party mock exam tests) can understate or overstate real readiness. Compute `correct / total` restricted to course-mapped questions and surface it prominently, separate from the raw overall score. Don't also compute or report a "non-course-mapped accuracy" or similar — the overall score already covers that ground, and the gap-topic report below covers the one subset of it worth tracking on its own.
+The actual certification exam is the CCAF (Claude Certified Architect – Foundations), scoped to Claude Code, the Claude Agent SDK, the Claude API, and MCP broadly — not just the 4 official Claude Learning Path courses (per `exam-prep/CLAUDE.md`). So the **raw overall score is the number closest to real CCAF readiness** — don't compute or surface a separate "course-mapped accuracy" as if it were the truer readiness signal; course-mapped vs gap-mapped is a routing distinction (which notes to update), not a scoping one.
 
-The gap-mapped breakdown is informational only, tracking "how's your extra-knowledge doing" — it does not feed into the course-mapped accuracy figure or the scored domain breakdown.
+Still compute the course-mapped and gap-mapped breakdowns from Step 2b, but report them as **informational routing info only** — where a wrong answer's underlying concept lives (an existing chapter note vs an existing gap-topics note vs neither) — not as competing readiness metrics.
 
 ## Step 3: Find patterns, not just percentages
 
@@ -47,17 +47,15 @@ When a transcript is available, also look for patterns in *how* Bruno arrives at
 
 ## Step 4: Report in chat
 
-Give Bruno, in plain conversational text (no giant tables — he already saw the domain breakdown in the PDF itself): the overall score/pass-fail in one line, immediately followed by the course-mapped accuracy from Step 2b (e.g. "X/Y correct on questions that map to actual course material (Z%) — this is the number closest to real CCA-F readiness, since the exam is scoped to the official learning path"); 2-4 named failure patterns, each with what it is, why it happens (per the explanations, sharpened by the transcript's real-time reasoning when available), and which questions demonstrate it; 1-2 named strength patterns; and any questions that didn't fit a pattern (the "other misses" bucket), briefly. If Step 2b found any gap-topics matches, mention them briefly too (a note may be worth a quick read/update if this attempt revealed something new about it).
+Give Bruno, in plain conversational text (no giant tables — he already saw the domain breakdown in the PDF itself): the overall score/pass-fail in one line (this is the number closest to real CCAF readiness, since the exam covers this material broadly, not just the 4 official courses); 2-4 named failure patterns, each with what it is, why it happens (per the explanations, sharpened by the transcript's real-time reasoning when available), and which questions demonstrate it; 1-2 named strength patterns; and any questions that didn't fit a pattern (the "other misses" bucket), briefly. If Step 2b found any gap-topics matches, mention them briefly too (a note may be worth a quick read/update if this attempt revealed something new about it).
 
 ## Step 5: Save the analysis note
 
 Write the same report to `2ndbrain/exam-prep/attempts/<source-slug>-<date>-analysis.md` (same slug/date as the source file, `-analysis` suffix) so patterns are comparable across multiple exam attempts over time. Use the source file's own name to derive `<source-slug>-<date>` if it already follows that convention; otherwise ask Bruno for a slug.
 
-Right after `## Score`, add the course-mapped accuracy line from Step 4 (e.g. "**Course-mapped accuracy: X/Y (Z%)** — correct rate on questions that map to actual course material only; closest predictor of real CCA-F readiness.").
-
 Include a `## Course-topic performance` section as a markdown table, grouped by chapter note (not one row per question — same style as `## Domain breakdown`): columns `Chapter note` (linked), `Score` (`X/Y (Z%)`, with `— weakest`/`— strongest` on the extremes same as the domain table), `Wrong` (the missed question numbers, or `—` if none).
 
-Include a `## Gap-topic performance` section in the same grouped style (only if Step 2b found any matches): `Gap-topic note` (linked), `Score`, `Wrong`. Note in a line above the table that this is informational and separate from the scored domain breakdown and from course-mapped accuracy, since gap topics aren't part of the actual certification exam's scope.
+Include a `## Gap-topic performance` section in the same grouped style (only if Step 2b found any matches): `Gap-topic note` (linked), `Score`, `Wrong`. Note in a line above the table that this is informational routing (which existing gap-topics note this maps to), not a separate readiness metric — these questions count toward the overall score like any other, since gap topics are real CCAF exam scope.
 
 ## Step 6: Recommend the next step
 

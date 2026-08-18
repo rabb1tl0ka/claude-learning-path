@@ -46,12 +46,12 @@ The 20 questions that map to actual course material (see course-mapped accuracy 
 
 | Chapter note | Score | Wrong |
 |---|---|---|
-| [agents-and-workflows.md](../../claude-api/agents-and-workflows/agents-and-workflows.md) | 5/5 (100%) — strongest | — |
-| [prompt-engineering-techniques.md](../../claude-api/prompt-engineering-techniques/prompt-engineering-techniques.md) | 2/2 (100%) — strongest | — |
-| [what-are-skills.md](../../claude-code-agent-skills/what-are-skills.md) | 1/1 (100%) — strongest | — |
-| [long-sessions-and-steering.md](../../claude-code-in-action/long-sessions-and-steering.md) | 5/8 (63%) | Q06, Q15, Q58 |
-| [automating-and-verifying-work.md](../../claude-code-in-action/automating-and-verifying-work.md) | 1/2 (50%) | Q33 |
-| [introducing-tool-use.md](../../claude-api/tool-use-with-claude/introducing-tool-use.md) | 0/2 (0%) — weakest | Q11, Q57 |
+| [agents-and-workflows.md](../../ccaf-learning/claude-api/agents-and-workflows/agents-and-workflows.md) | 5/5 (100%) — strongest | — |
+| [prompt-engineering-techniques.md](../../ccaf-learning/claude-api/prompt-engineering-techniques/prompt-engineering-techniques.md) | 2/2 (100%) — strongest | — |
+| [what-are-skills.md](../../ccaf-learning/claude-code-agent-skills/what-are-skills.md) | 1/1 (100%) — strongest | — |
+| [long-sessions-and-steering.md](../../ccaf-learning/claude-code-in-action/long-sessions-and-steering.md) | 5/8 (63%) | Q06, Q15, Q58 |
+| [automating-and-verifying-work.md](../../ccaf-learning/claude-code-in-action/automating-and-verifying-work.md) | 1/2 (50%) | Q33 |
+| [introducing-tool-use.md](../../ccaf-learning/claude-api/tool-use-with-claude/introducing-tool-use.md) | 0/2 (0%) — weakest | Q11, Q57 |
 
 Several matches here are conceptual rather than exact — e.g. Q22/Q29/Q30/Q31/Q42 map to `agents-and-workflows.md`'s workflow-pattern content (chaining, parallelization, workflow-vs-agent selection) even though the questions frame it in multi-agent/subagent terms the course itself doesn't use; Q6/Q15/Q26/Q40/Q51 map to `long-sessions-and-steering.md`'s worktree/plan-mode/session-state content the same way. `introducing-tool-use.md` being the weakest chapter (0/2) is notable: both misses (Q11, Q57) are exactly the tool-description-quality failure mode that chapter's own notes flagged as a parallel to Skill/Agent descriptions — the concept was already flagged as important and still missed twice.
 
@@ -61,13 +61,13 @@ Informational only — separate from the scored domain breakdown above and from 
 
 | Gap-topic note | Score | Wrong |
 |---|---|---|
-| [semantic-vs-schema-validation.md](../gap-topics/structured-data-extraction/semantic-vs-schema-validation.md) | 2/2 (100%) | — |
-| [retry-with-error-feedback.md](../gap-topics/structured-data-extraction/retry-with-error-feedback.md) | 3/3 (100%) | — |
-| [aggregate-metrics-trap.md](../gap-topics/structured-data-extraction/aggregate-metrics-trap.md) | 1/1 (100%) | — |
-| [stratified-sampling.md](../gap-topics/structured-data-extraction/stratified-sampling.md) | 2/2 (100%) | — |
-| [confidence-calibration.md](../gap-topics/structured-data-extraction/confidence-calibration.md) | 1/1 (100%) | — |
-| [structured-claim-source-mapping.md](../gap-topics/structured-data-extraction/structured-claim-source-mapping.md) | 1/2 (50%) — weakest | Q16 |
-| [tool-choice-forcing.md](../gap-topics/tool-use-with-claude/tool-choice-forcing.md) | 1/2 (50%) — weakest | Q49 |
+| [semantic-vs-schema-validation.md](../../ccaf-learning/structured-data-extraction/semantic-vs-schema-validation.md) | 2/2 (100%) | — |
+| [retry-with-error-feedback.md](../../ccaf-learning/structured-data-extraction/retry-with-error-feedback.md) | 3/3 (100%) | — |
+| [aggregate-metrics-trap.md](../../ccaf-learning/structured-data-extraction/aggregate-metrics-trap.md) | 1/1 (100%) | — |
+| [stratified-sampling.md](../../ccaf-learning/structured-data-extraction/stratified-sampling.md) | 2/2 (100%) | — |
+| [confidence-calibration.md](../../ccaf-learning/structured-data-extraction/confidence-calibration.md) | 1/1 (100%) | — |
+| [structured-claim-source-mapping.md](../../ccaf-learning/structured-data-extraction/structured-claim-source-mapping.md) | 1/2 (50%) — weakest | Q16 |
+| [tool-choice-forcing.md](../../ccaf-learning/tool-choice-forcing/tool-choice-forcing.md) | 1/2 (50%) — weakest | Q49 |
 
 Compared to try 1 (where `tool-choice-forcing.md` was the weakest gap topic at 1/3), the same note is still a soft spot this attempt — worth a quick re-read given it's shown up as a miss in both attempts.
 

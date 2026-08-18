@@ -22,7 +22,7 @@ Per [João Correia](https://lokahq.slack.com) in `#claude-learning-path` (`C0B6A
 2. **Capture your results** — export/screenshot/copy the questions you got wrong, plus your answer and the correct one if shown. Text file or PDF both work.
 3. **Analyze failure patterns**: run `/exam-analysis <path-to-file>`. This reports *why* you're missing questions (recurring reasoning mistakes, not just which domain scored low), what you consistently get right, and saves a dated analysis note next to the source file.
 4. **Import the misses**: from inside `2ndbrain/`, run `/flashcards import <path-to-file>`. This:
-   - Matches each missed question to the relevant chapter note across `claude-api/`, `model-context-protocol/`, and `claude-code-in-action/`
+   - Matches each missed question to the relevant chapter or topic note under `ccaf-learning/` (course dirs like `claude-api/`, `model-context-protocol/`, `claude-code-in-action/`, plus first-class gap-topic dirs like `structured-data-extraction/`)
    - Seeds `.flashcards/history.jsonl` with those real misses (tagged so they're distinguishable from self-generated quiz attempts)
    - Regenerates `.flashcards/weak-spots.md`
    - Writes a dated study guide to `.flashcards/study-guides/` — grounded in your own notes, weakest topics first, with a suggested study order and self-check questions

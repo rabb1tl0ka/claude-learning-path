@@ -49,30 +49,30 @@ The 31 questions that map to actual course material (see course-mapped accuracy 
 
 | Chapter note | Score | Wrong |
 |---|---|---|
-| [agents-and-workflows.md](../../claude-api/agents-and-workflows/agents-and-workflows.md) | 10/13 (77%) | Q01, Q48, Q55 |
-| [prompt-engineering-techniques.md](../../claude-api/prompt-engineering-techniques/prompt-engineering-techniques.md) | 3/6 (50%) | Q14, Q17, Q33 |
-| [automating-and-verifying-work.md](../../claude-code-in-action/automating-and-verifying-work.md) | 4/5 (80%) | Q53 |
-| [sharing-and-scaling-claude-code.md](../../claude-code-in-action/sharing-and-scaling-claude-code.md) | 3/3 (100%) | — |
-| [introducing-tool-use.md](../../claude-api/tool-use-with-claude/introducing-tool-use.md) | 0/2 (0%) — weakest | Q50, Q52 |
-| [long-sessions-and-steering.md](../../claude-code-in-action/long-sessions-and-steering.md) | 1/1 (100%) | — |
-| [claude-md-load-order.md](../../claude-code-agent-skills/claude-md-load-order.md) | 1/1 (100%) | — |
+| [agents-and-workflows.md](../../ccaf-learning/claude-api/agents-and-workflows/agents-and-workflows.md) | 10/13 (77%) | Q01, Q48, Q55 |
+| [prompt-engineering-techniques.md](../../ccaf-learning/claude-api/prompt-engineering-techniques/prompt-engineering-techniques.md) | 3/6 (50%) | Q14, Q17, Q33 |
+| [automating-and-verifying-work.md](../../ccaf-learning/claude-code-in-action/automating-and-verifying-work.md) | 4/5 (80%) | Q53 |
+| [sharing-and-scaling-claude-code.md](../../ccaf-learning/claude-code-in-action/sharing-and-scaling-claude-code.md) | 3/3 (100%) | — |
+| [introducing-tool-use.md](../../ccaf-learning/claude-api/tool-use-with-claude/introducing-tool-use.md) | 0/2 (0%) — weakest | Q50, Q52 |
+| [long-sessions-and-steering.md](../../ccaf-learning/claude-code-in-action/long-sessions-and-steering.md) | 1/1 (100%) | — |
+| [claude-md-load-order.md](../../ccaf-learning/claude-code-agent-skills/claude-md-load-order.md) | 1/1 (100%) | — |
 
 Q47's match to `automating-and-verifying-work.md` is conceptual (independent-verification principle) rather than exact — the question's own explanation cites model-tier capability, not session isolation specifically.
 
 ## Gap-topic performance
 
-Informational only — separate from the scored domain breakdown above, since gap topics are outside the actual certification exam's scope (see `exam-prep/CLAUDE.md`). This tracks how this attempt did on questions that map to an existing `gap-topics/` note.
+Informational only — separate from the scored domain breakdown above, since gap topics are real CCAF exam scope but tracked separately for routing purposes (see `exam-prep/CLAUDE.md`). This tracks how this attempt did on questions that map to an existing `gap-topics/` note.
 
 | Gap-topic note | Score | Wrong |
 |---|---|---|
-| [aggregate-metrics-trap.md](../gap-topics/structured-data-extraction/aggregate-metrics-trap.md) | 2/2 (100%) | — |
-| [confidence-calibration.md](../gap-topics/structured-data-extraction/confidence-calibration.md) | 1/1 (100%) | — |
-| [retry-with-error-feedback.md](../gap-topics/structured-data-extraction/retry-with-error-feedback.md) | 2/3 (67%) | Q15 |
-| [risk-based-human-review.md](../gap-topics/structured-data-extraction/risk-based-human-review.md) | 1/1 (100%) | — |
-| [semantic-vs-schema-validation.md](../gap-topics/structured-data-extraction/semantic-vs-schema-validation.md) | 0/1 (0%) — weakest | Q25 |
-| [stratified-sampling.md](../gap-topics/structured-data-extraction/stratified-sampling.md) | 1/2 (50%) | Q16 |
-| [structured-claim-source-mapping.md](../gap-topics/structured-data-extraction/structured-claim-source-mapping.md) | 2/2 (100%) | — |
-| [tool-choice-forcing.md](../gap-topics/tool-use-with-claude/tool-choice-forcing.md) | 1/3 (33%) — weakest | Q20, Q43 |
+| [aggregate-metrics-trap.md](../../ccaf-learning/structured-data-extraction/aggregate-metrics-trap.md) | 2/2 (100%) | — |
+| [confidence-calibration.md](../../ccaf-learning/structured-data-extraction/confidence-calibration.md) | 1/1 (100%) | — |
+| [retry-with-error-feedback.md](../../ccaf-learning/structured-data-extraction/retry-with-error-feedback.md) | 2/3 (67%) | Q15 |
+| [risk-based-human-review.md](../../ccaf-learning/structured-data-extraction/risk-based-human-review.md) | 1/1 (100%) | — |
+| [semantic-vs-schema-validation.md](../../ccaf-learning/structured-data-extraction/semantic-vs-schema-validation.md) | 0/1 (0%) — weakest | Q25 |
+| [stratified-sampling.md](../../ccaf-learning/structured-data-extraction/stratified-sampling.md) | 1/2 (50%) | Q16 |
+| [structured-claim-source-mapping.md](../../ccaf-learning/structured-data-extraction/structured-claim-source-mapping.md) | 2/2 (100%) | — |
+| [tool-choice-forcing.md](../../ccaf-learning/tool-choice-forcing/tool-choice-forcing.md) | 1/3 (33%) — weakest | Q20, Q43 |
 
 ## Practical implication
 

@@ -10,6 +10,8 @@ Complete all 4 courses, then prepare with practice exams, then sit the certifica
 
 ## Courses
 
+All course dirs live under `2ndbrain/ccaf-learning/`.
+
 | # | Course | Status | Course dir name |
 |---|--------|--------|------------------|
 | 1 | Introduction to agent skills | Complete | `claude-code-agent-skills` |
@@ -29,16 +31,22 @@ e.g. `claude-api`, `what-are-skills.md` — never `Claude API` or `What Are Skil
 - `2ndbrain/` — study notes vault, one dir per course, one `.md` file per chapter.
   Kept separate so it stays a portable, code-free knowledge base. See
   `2ndbrain/CLAUDE.md` for the note-taking workflow.
+  - `2ndbrain/ccaf-learning/` — the course dirs themselves (e.g. `claude-api/`),
+    plus first-class topic dirs for CCAF-relevant material the courses don't
+    cover (e.g. `structured-data-extraction/`) — the actual exam (CCAF) is
+    scoped broader than the 4 official courses, so both live at the same tier.
+    See `2ndbrain/CLAUDE.md` for the full structure.
 - `code/` — code developed while working through course chapters. Mirrors the
-  course dir names in `2ndbrain/` 1:1 (e.g. `code/claude-api/` pairs with
-  `2ndbrain/claude-api/`), but only gets populated for chapters that actually
-  involve writing code — don't pre-create empty chapter dirs.
+  course dir names in `2ndbrain/ccaf-learning/` 1:1 (e.g. `code/claude-api/`
+  pairs with `2ndbrain/ccaf-learning/claude-api/`), but only gets populated
+  for chapters that actually involve writing code — don't pre-create empty
+  chapter dirs.
 - `2ndbrain/exam-prep/` — practice-exam attempts and mistake reviews ahead of
   the actual certification exam. All 4 courses are done, so this is the
   current phase of the repo. Lives inside `2ndbrain/` (not a sibling of it)
-  specifically so exam prep can draw on the accumulated chapter notes and
-  research from the other course dirs, rather than starting from a blank
-  slate — see `2ndbrain/CLAUDE.md` for how it's organized.
+  specifically so exam prep can draw on the accumulated notes and research in
+  `2ndbrain/ccaf-learning/`, rather than starting from a blank slate — see
+  `2ndbrain/CLAUDE.md` for how it's organized.
 
 ## Progress
 

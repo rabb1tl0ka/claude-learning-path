@@ -4,7 +4,7 @@ Grounded in your own chapter notes. Highest-impact (most-missed) topics first. E
 
 ## 1. Coordinator context-passing in multi-agent systems (2 misses — grounded in this import)
 
-**Core theory** (from `claude-api/agents-and-workflows/agents-and-workflows.md`): in a hub-and-spoke architecture, subagents don't share memory or communicate directly — the coordinator is the only thing that sees every subagent's output. If a downstream agent is missing information a sibling already produced, the fault is almost always the **coordinator failing to forward it as context**, not the downstream agent's own prompt or the upstream agent's output quality.
+**Core theory** (from `ccaf-learning/claude-api/agents-and-workflows/agents-and-workflows.md`): in a hub-and-spoke architecture, subagents don't share memory or communicate directly — the coordinator is the only thing that sees every subagent's output. If a downstream agent is missing information a sibling already produced, the fault is almost always the **coordinator failing to forward it as context**, not the downstream agent's own prompt or the upstream agent's output quality.
 
 **X vs Y**: "the receiving agent's system prompt needs an instruction" vs. "the coordinator isn't passing the right data forward" — you defaulted to blaming the receiving agent's prompt twice (synthesis-agent citations, test-update agent's stale schema references) when the real fix was upstream, at the coordinator's context-passing step.
 
@@ -32,7 +32,7 @@ Grounded in your own chapter notes. Highest-impact (most-missed) topics first. E
 
 ## 5. Matching enforcement strictness to actual risk (1 miss — grounded in this import)
 
-**Core theory** (from `claude-code-in-action/automating-and-verifying-work.md`'s hooks section): hooks exist for rules Claude *can't be allowed to skip* — safety-critical, hard-to-reverse actions. A recoverable failure (a missed backup on version-controlled files) doesn't need the same deterministic enforcement as an irreversible one (writing outside the project directory). Converting *everything* to a hook "for consistency" adds implementation complexity without matching benefit.
+**Core theory** (from `ccaf-learning/claude-code-in-action/automating-and-verifying-work.md`'s hooks section): hooks exist for rules Claude *can't be allowed to skip* — safety-critical, hard-to-reverse actions. A recoverable failure (a missed backup on version-controlled files) doesn't need the same deterministic enforcement as an irreversible one (writing outside the project directory). Converting *everything* to a hook "for consistency" adds implementation complexity without matching benefit.
 
 **Self-check**: which guardrail deserves a hook — one where failure is expensive/irreversible, or one where failure is merely inconvenient and recoverable?
 
