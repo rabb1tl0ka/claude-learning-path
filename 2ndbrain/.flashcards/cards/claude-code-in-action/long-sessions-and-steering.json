@@ -74,6 +74,30 @@
         "\"Be careful with API routes\""
       ],
       "answer_index": 0
+    },
+    {
+      "id": "q7",
+      "topic": "stale-context-recovery",
+      "question": "A Claude Code agent has been working on a feature branch for 45 minutes. Tool results from 40 minutes ago (file reads) are now stale because a colleague pushed changes to those files, and the agent is reasoning from the outdated contents. What is the best recovery strategy?",
+      "options": [
+        "Start a fresh session seeded with a summary of the valuable findings so far, then re-read the changed files from that clean state",
+        "Stay in the current session and ask the agent to re-read the changed files — the stale results remain in context regardless",
+        "Ignore the staleness since the agent will naturally prioritize newer information over older context",
+        "Restart the same session with --continue and hope the model deprioritizes the earlier reads"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q8",
+      "topic": "worktree-coordination",
+      "question": "Two Claude Code instances are running in separate git worktrees — Instance A extracting the payment service, Instance B extracting the inventory service — and both need to modify the same shared OrderService.java. How should the team coordinate this?",
+      "options": [
+        "Sequence it: one instance completes its edit and merges first, then the other rebases onto the updated state before making its own changes",
+        "Let both instances edit OrderService.java independently and resolve the merge conflict after both are done",
+        "Worktrees already isolate each instance's changes, so no coordination is needed for shared files",
+        "Have both instances write to separate copies of OrderService.java and merge programmatically at the end"
+      ],
+      "answer_index": 0
     }
   ]
 }

@@ -33,3 +33,83 @@
 {"date": "2026-08-18", "course": "Building with the Claude API", "chapter": "Introducing Tool Use", "question_id": null, "topic": "tool description quality", "correct": false, "source": "import:claudecertificationguide-mockexam-try2-2026-08-18.pdf", "imported_question": "An MCP server exposes a 'query_database' tool for Snowflake. Agents ignore it and run SQL via the built-in Bash tool against the Snowflake CLI, even though the MCP tool returns structured results with column types and pagination that Bash does not. What is the most likely cause and fix?"}
 {"date": "2026-08-18", "course": "Claude Code in Action", "chapter": "Long-running sessions, steering, and CLAUDE.md configuration", "question_id": null, "topic": "effective-claude-md-rules", "correct": false, "source": "import:claudecertificationguide-mockexam-try2-2026-08-18.pdf", "imported_question": "The team's CLAUDE.md specifies that all new microservices must include integration tests that verify API contract compliance and database migration rollback. A developer notices that Claude Code sometimes generates unit tests that mock the database instead of writing the required integration tests. What should the team add to their configuration?"}
 {"date": "2026-08-18", "course": "Building with the Claude API", "chapter": "Agents and workflows", "question_id": null, "topic": "coordinator-context-passing", "correct": false, "source": "import:claudecertificationguide-mockexam-try2-2026-08-18.pdf", "imported_question": "A synthesis agent produces a report with several claims that have no source attribution. The web search and document analysis subagents are working correctly and returning well-sourced results. What is the most likely root cause?"}
+{"date":"2026-08-18","course":"Building with the Claude API","chapter":"Introducing Tool Use","question_id":"q2","topic":"tool description quality","correct":true}
+{"date":"2026-08-18","course":"Building with the Claude API","chapter":"Introducing Tool Use","question_id":"q3","topic":"tool-choice/tool-granularity confusion","correct":false}
+{"date":"2026-08-18","course":"Building with the Claude API","chapter":"Introducing Tool Use","question_id":"q5","topic":"multi-block assistant messages","correct":true}
+{"date":"2026-08-18","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q6","topic":"effective-claude-md-rules","correct":true}
+{"date":"2026-08-18","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q1","topic":"root-cause-to-mechanism matching","correct":true}
+{"date":"2026-08-18","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q2","topic":"root-cause-to-mechanism matching","correct":false}
+{"date":"2026-08-18","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q7","topic":"root-cause-to-mechanism matching","correct":true}
+{"date":"2026-08-18","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q3","topic":"workflows vs. agents rule of thumb","correct":true}
+{"date":"2026-08-18","course":"Claude Code in Action","chapter":"Automating and verifying work","question_id":"q6","topic":"hook exit codes","correct":true}
+{"date":"2026-08-18","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q1","topic":"claude-md-hierarchy","correct":true}
+{"date":"2026-08-19","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q8","topic":"worktree-coordination","correct":false}
+{"date":"2026-08-19","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q10","topic":"prompt-clarity-vs-verification-patch","correct":true}
+{"date":"2026-08-19","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q12","topic":"prompt-keyword-overlap","correct":true}
+{"date":"2026-08-19","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q9","topic":"few-shot-vs-tool-granularity","correct":false}
+{"date":"2026-08-19","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q11","topic":"role-scoped-subagent-splitting","correct":true}
+{"date":"2026-08-19","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q7","topic":"stale-context-recovery","correct":true}
+{"date":"2026-08-19","course":"Claude Code in Action","chapter":"Automating and verifying work","question_id":"q10","topic":"hook-lifecycle-events","correct":true}
+{"date":"2026-08-19","course":"Claude Code in Action","chapter":"Automating and verifying work","question_id":"q9","topic":"hooks-vs-claude-md-enforcement","correct":true}
+{"date":"2026-08-19","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q10","topic":"coordinator-context-passing","correct":false}
+{"date":"2026-08-19","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q11","topic":"concrete-examples-vs-vague-prose","correct":true}
+{"date":"2026-08-19","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q13","topic":"coordinator-context-passing","correct":true}
+{"date":"2026-08-19","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q15","topic":"coordinator-context-passing","correct":true}
+{"date":"2026-08-20","course":"Building with the Claude API","chapter":"Introducing Tool Use","question_id":"q3","topic":"tool-choice/tool-granularity confusion","correct":true}
+{"date":"2026-08-20","course":"Building with the Claude API","chapter":"Introducing Tool Use","question_id":"q2","topic":"tool description quality","correct":true}
+{"date":"2026-08-20","course":"Building with the Claude API","chapter":"Introducing Tool Use","question_id":"q5","topic":"multi-block assistant messages","correct":true}
+{"date":"2026-08-20","course":"Building with the Claude API","chapter":"Multi-turn conversations with tools","question_id":"q1","topic":"chained tool calls","correct":true}
+{"date":"2026-08-20","course":"Building with the Claude API","chapter":"Implementing multiple turns","question_id":"q1","topic":"run_conversation loop structure","correct":true}
+{"date":"2026-08-20","course":"Building with the Claude API","chapter":"Using multiple tools","question_id":"q3","topic":"sending all schemas every request","correct":true}
+{"date":"2026-08-20","course":"Building with the Claude API","chapter":"Fine grained tool calling","question_id":"q2","topic":"why tool streaming feels laggy","correct":true}
+{"date":"2026-08-20","course":"Building with the Claude API","chapter":"The text editor tool","question_id":"q2","topic":"two halves of every tool","correct":true}
+{"date":"2026-08-20","course":"Building with the Claude API","chapter":"The web search tool","question_id":"q3","topic":"why some tools are server-side only","correct":true}
+{"date":"2026-08-20","course":"Building with the Claude API","chapter":"Quiz on tool use with Claude","question_id":"q2","topic":"batch tool vs message batches api","correct":true}
+{"date":"2026-08-20","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q1","topic":"root-cause-to-mechanism matching","correct":true}
+{"date":"2026-08-20","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q3","topic":"being clear and direct","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q4","topic":"being specific","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q5","topic":"structuring with XML tags","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q6","topic":"providing examples","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q8","topic":"prompt engineering workflow","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q9","topic":"few-shot-vs-tool-granularity","correct":false}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q10","topic":"prompt-clarity-vs-verification-patch","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q11","topic":"concrete-examples-vs-vague-prose","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q12","topic":"prompt-keyword-overlap","correct":true}
+{"date":"2026-08-21","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q1","topic":"claude-md-hierarchy","correct":true}
+{"date":"2026-08-21","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q2","topic":"claude-md-hierarchy","correct":true}
+{"date":"2026-08-21","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q3","topic":"plan-mode-vs-direct-execution","correct":true}
+{"date":"2026-08-21","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q4","topic":"plan-mode-vs-direct-execution","correct":true}
+{"date":"2026-08-21","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q5","topic":"hard-rules-belong-in-hooks","correct":true}
+{"date":"2026-08-21","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q6","topic":"effective-claude-md-rules","correct":true}
+{"date":"2026-08-21","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q7","topic":"stale-context-recovery","correct":true}
+{"date":"2026-08-21","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q8","topic":"worktree-coordination","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q17","topic":"narrow-decomposition-failure-tracing","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q18","topic":"narrow-decomposition-failure-tracing","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q19","topic":"coordinator-responsibilities","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q20","topic":"coordinator-responsibilities","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q21","topic":"coordinator-responsibilities","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q22","topic":"subagent-communication-routing","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q23","topic":"coordinator-context-passing","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q24","topic":"coordinator-context-passing","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q13","topic":"coordinator-context-passing","correct":true}
+{"date":"2026-08-21","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q11","topic":"role-scoped-subagent-splitting","correct":true}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q10","topic":"coordinator-context-passing","correct":true}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q13","topic":"coordinator-context-passing","correct":true}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q11","topic":"role-scoped-subagent-splitting","correct":true}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q19","topic":"coordinator-responsibilities","correct":true}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Agents and workflows","question_id":"q17","topic":"narrow-decomposition-failure-tracing","correct":true}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q9","topic":"few-shot-vs-tool-granularity","correct":true}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q1","topic":"root-cause-to-mechanism matching","correct":false}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q10","topic":"prompt-clarity-vs-verification-patch","correct":true}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q11","topic":"concrete-examples-vs-vague-prose","correct":true}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Prompt Engineering Techniques","question_id":"q12","topic":"prompt-keyword-overlap","correct":true}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Introducing Tool Use","question_id":"q3","topic":"tool-choice/tool-granularity confusion","correct":true}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Introducing Tool Use","question_id":"q2","topic":"tool description quality","correct":true}
+{"date":"2026-08-22","course":"Building with the Claude API","chapter":"Introducing Tool Use","question_id":"q5","topic":"multi-block assistant messages","correct":true}
+{"date":"2026-08-22","course":"Claude Code in Action","chapter":"Automating and verifying work","question_id":"q9","topic":"hooks-vs-claude-md-enforcement","correct":true}
+{"date":"2026-08-22","course":"Claude Code in Action","chapter":"Automating and verifying work","question_id":"q10","topic":"hook-lifecycle-events","correct":true}
+{"date":"2026-08-22","course":"Claude Code in Action","chapter":"Automating and verifying work","question_id":"q1","topic":"risk-matched enforcement (hooks vs prompts)","correct":true}
+{"date":"2026-08-22","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q8","topic":"worktree-coordination","correct":true}
+{"date":"2026-08-22","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q7","topic":"stale-context-recovery","correct":true}
+{"date":"2026-08-22","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q6","topic":"effective-claude-md-rules","correct":true}
+{"date":"2026-08-22","course":"Claude Code in Action","chapter":"Long-running sessions, steering, and CLAUDE.md configuration","question_id":"q1","topic":"claude-md-hierarchy","correct":true}

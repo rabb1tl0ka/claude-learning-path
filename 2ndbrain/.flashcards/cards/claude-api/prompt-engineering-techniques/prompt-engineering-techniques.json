@@ -98,6 +98,54 @@
         "Ask Claude to write its own prompt from scratch with no human input"
       ],
       "answer_index": 0
+    },
+    {
+      "id": "q9",
+      "topic": "few-shot-vs-tool-granularity",
+      "question": "A tool called analyze_content with the description 'Analyses content from various sources' is used indiscriminately for web scraping, document parsing, and code analysis, leading to poor results for each. What is the most effective fix?",
+      "options": [
+        "Split analyze_content into purpose-specific tools (e.g. scrape_web, parse_document, analyze_code), each scoped to one job",
+        "Rewrite the tool's description to be more detailed about all three use cases",
+        "Add few-shot examples demonstrating correct use for each of the three cases",
+        "Lower the temperature so the agent applies the tool more consistently"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q10",
+      "topic": "prompt-clarity-vs-verification-patch",
+      "question": "A CI/CD code review pipeline has a 40% false positive rate on documentation-mismatch findings, causing developers to ignore all review categories. What is the most effective fix?",
+      "options": [
+        "Rewrite the documentation-mismatch criterion so it's specific enough to stop over-flagging, rather than patching around it downstream",
+        "Add a second verification pass that re-checks each documentation-mismatch finding before it's shown to developers",
+        "Remove the documentation-mismatch category entirely so developers stop ignoring the rest",
+        "Lower the model's temperature to reduce false positives"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q11",
+      "topic": "concrete-examples-vs-vague-prose",
+      "question": "A code review prompt classifies severity using prose descriptions like 'critical means the code is dangerous,' and judgments are inconsistent. What is the most effective improvement?",
+      "options": [
+        "Replace the vague prose severity definitions with concrete labeled examples of what counts as each severity level",
+        "Add a second model pass that re-scores severity for consistency",
+        "Expand the prose definition with more adjectives describing danger",
+        "Lower the temperature to make severity scoring more deterministic"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q12",
+      "topic": "prompt-keyword-overlap",
+      "question": "A system prompt defines two review categories: 'Check for security vulnerabilities in each function' and 'Check for performance issues in each loop.' The model frequently calls the wrong tool. What is the root cause and best fix?",
+      "options": [
+        "The two instructions use overlapping/similar phrasing that doesn't clearly map to distinct tools — rewrite them with distinct, non-overlapping keywords tied to each tool's actual scope",
+        "The tools' descriptions need more few-shot examples of correct calls",
+        "The instructions need to be wrapped in XML tags to disambiguate them",
+        "The model needs a lower temperature to reduce misclassification"
+      ],
+      "answer_index": 0
     }
   ]
 }

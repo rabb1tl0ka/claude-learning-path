@@ -1,0 +1,43 @@
+{
+  "course": "Building with the Claude API",
+  "chapter": "Fine grained tool calling",
+  "generated": "2026-08-20",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "input_json streaming event",
+      "question": "When streaming tool use, what does the input_json event's partial_json property carry?",
+      "options": [
+        "A fragment of the tool call's arguments as they're generated",
+        "The full cumulative JSON assembled so far",
+        "The tool's JSON schema definition",
+        "A validation error message"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "why tool streaming feels laggy",
+      "question": "By default, why does streaming a tool call's arguments feel laggy (long pauses, then a sudden burst of text) rather than smooth?",
+      "options": [
+        "The API buffers generated JSON and validates it against the tool's schema one top-level key at a time before releasing it",
+        "The network connection throttles tool_use events specifically",
+        "Claude generates tool arguments slower than regular text",
+        "Streaming is disabled by default for any request containing tools"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "fine_grained flag trade-off",
+      "question": "Passing fine_grained=True disables API-side JSON schema validation during streaming to get smoother output. What's the trade-off?",
+      "options": [
+        "Your own code must now handle the possibility of receiving invalid JSON, since the API no longer guarantees well-formed output before delivery",
+        "It doubles the number of API calls required per tool use",
+        "It disables tool use entirely for that request",
+        "It requires switching to a different model"
+      ],
+      "answer_index": 0
+    }
+  ]
+}

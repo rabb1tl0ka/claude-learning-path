@@ -1,0 +1,55 @@
+{
+  "course": "Building with the Claude API",
+  "chapter": "Using multiple tools",
+  "generated": "2026-08-20",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "wiring new tools into run_tool",
+      "question": "When a new tool like set_reminder is added to a project, what change is needed in the function that dispatches tool calls to their implementations?",
+      "options": [
+        "An additional elif branch matching the new tool's name to its implementation",
+        "A brand new run_conversation function specific to that tool",
+        "Nothing — the API automatically routes calls to the right function",
+        "A change to the model parameter in the API request"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "tool schema registration",
+      "question": "For Claude to be able to call a newly wired-in tool, what else has to happen besides implementing its function?",
+      "options": [
+        "Its JSON schema must be added to the list of tools passed to Claude in run_conversation",
+        "The tool must be registered in a separate authentication step",
+        "The tool must be the only one in the tools list",
+        "The tool's schema must be sent as a system prompt instead of the tools parameter"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "sending all schemas every request",
+      "question": "The course's approach sends every tool's full schema to Claude on every request. What's the main drawback of this pattern as opposed to a lookup-tool approach?",
+      "options": [
+        "It's not the most efficient design — an alternative is exposing just tool names plus a lookup tool that fetches full schemas on demand",
+        "The API rejects requests with more than one tool schema",
+        "Claude cannot parse more than one schema per request",
+        "It requires a separate API key per tool"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q4",
+      "topic": "ordering between tool calls",
+      "question": "Does the Claude API have a formal concept of dependency/ordering between multiple tool_use blocks returned in a single response?",
+      "options": [
+        "No — the API has no such concept; Claude simply won't emit dependent calls together in the first place",
+        "Yes — each tool_use block includes a depends_on field",
+        "Yes — tool_use blocks are always executed in alphabetical order by tool name",
+        "Yes — the developer must specify ordering via the tool_choice parameter"
+      ],
+      "answer_index": 0
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "course": "Building with the Claude API",
+  "chapter": "Multi-turn conversations with tools",
+  "generated": "2026-08-20",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "chained tool calls",
+      "question": "A user asks \"what day is 103 days from today?\" and the app has separate get_current_date_time and add_duration_to_date_time tools. Why does this require multiple tool calls in sequence rather than one?",
+      "options": [
+        "Claude first needs today's date from one tool before it has enough information to call the second tool that adds the duration",
+        "The API enforces a hard limit of one tool call per tool per conversation",
+        "Each tool can only return one field, so results must be split across calls",
+        "Claude always calls every available tool once regardless of relevance"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "tool-use loop design",
+      "question": "Why must an application that wires up tool use be structured as a loop (submit, check for tool_use, run and resubmit, repeat) rather than a single request/response?",
+      "options": [
+        "A user query can require an unpredictable number of chained tool calls before Claude has enough information to answer",
+        "The Claude API requires exactly two round trips for every tool-enabled request",
+        "Loops are only needed when using the text editor tool",
+        "Streaming responses always require a while loop to render tokens"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "stop_reason field",
+      "question": "What is the recommended way to detect whether Claude wants to call a tool, rather than manually scanning the response content blocks?",
+      "options": [
+        "Check the stop_reason field on the response for the value tool_use",
+        "Check whether the response text is empty",
+        "Check the HTTP status code of the response",
+        "Check whether more than one content block was returned"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q4",
+      "topic": "stop_reason values",
+      "question": "Besides tool_use, which of these is a valid stop_reason value indicating Claude finished its answer normally?",
+      "options": [
+        "end_turn",
+        "tool_result",
+        "input_json",
+        "partial_json"
+      ],
+      "answer_index": 0
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "course": "Building with the Claude API",
+  "chapter": "The text editor tool",
+  "generated": "2026-08-20",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "text editor tool availability",
+      "question": "What makes the text editor tool different from custom tools built earlier in the course?",
+      "options": [
+        "Claude has access to its JSON schema by default, unlike custom tools which require you to write the schema yourself",
+        "It requires no server-side code at all to function",
+        "It can only be used with extended thinking enabled",
+        "It does not support undo operations"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "two halves of every tool",
+      "question": "For the text editor tool, which half does Anthropic provide, and which half is still the developer's responsibility?",
+      "options": [
+        "Anthropic provides the JSON schema; the developer must still implement the function that performs the real file operations",
+        "Anthropic provides the full implementation; the developer only needs to register the schema",
+        "Anthropic provides neither half; both must be written from scratch",
+        "Anthropic provides both halves, requiring no developer work at all"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "why no bundled implementation",
+      "question": "Why doesn't the Claude API ship an SDK with a ready-made, per-OS text editor tool implementation the way it bundles the schema?",
+      "options": [
+        "File I/O is inherently environment/permission-specific in a way that resists a safe universal default",
+        "Text editor functionality is considered deprecated",
+        "It would violate the tool's JSON schema format",
+        "Only the web search tool is allowed to have a bundled implementation"
+      ],
+      "answer_index": 0
+    }
+  ]
+}

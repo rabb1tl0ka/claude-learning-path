@@ -98,6 +98,30 @@
         "manual"
       ],
       "answer_index": 0
+    },
+    {
+      "id": "q9",
+      "topic": "hooks-vs-claude-md-enforcement",
+      "question": "A developer-tool agent has a PreToolUse hook blocking file writes outside the project directory (enforced 100% of the time), and a system-prompt instruction 'always create a backup before overwriting' (followed 88% of the time). A senior engineer wants all guardrails converted to hooks for consistency. What is the correct assessment?",
+      "options": [
+        "Converting the backup rule to a hook is reasonable since it's a hard requirement being followed inconsistently — hooks guarantee enforcement where prompt instructions only request it",
+        "No change is needed since 88% compliance is already acceptable for any guardrail",
+        "Hooks should never be used for anything except path-restriction rules",
+        "The backup instruction should be removed entirely since prompts can't reliably enforce anything"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q10",
+      "topic": "hook-lifecycle-events",
+      "question": "A team wants to archive the full conversation transcript to a log file every time Claude Code runs /compact, so context lost during compaction can be reviewed later. Which hook configuration achieves this?",
+      "options": [
+        "A PreCompact hook, which fires immediately before compaction happens",
+        "A PreToolUse hook configured on a built-in 'Compact' tool",
+        "A PostToolUse hook that watches for any tool call containing the word 'compact'",
+        "A Stop hook, since compaction only happens when a session ends"
+      ],
+      "answer_index": 0
     }
   ]
 }

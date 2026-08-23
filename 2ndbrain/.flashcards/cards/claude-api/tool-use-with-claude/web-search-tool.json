@@ -1,0 +1,43 @@
+{
+  "course": "Building with the Claude API",
+  "chapter": "The web search tool",
+  "generated": "2026-08-20",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "web search implementation ownership",
+      "question": "How does the web search tool differ from the text editor tool in terms of who implements it?",
+      "options": [
+        "Web search is fully implemented by Claude/Anthropic, with no server-side implementation needed at all",
+        "Web search requires the same manual implementation as the text editor tool",
+        "Web search requires a third-party API key configured by the developer",
+        "Web search only works when extended thinking is also enabled"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "web search schema fields",
+      "question": "What does the max_uses field in the web search tool's schema control?",
+      "options": [
+        "The maximum number of searches Claude can run per request",
+        "The maximum number of results returned per search",
+        "The maximum tokens spent on the search query",
+        "The number of days search results remain cached"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "why some tools are server-side only",
+      "question": "Why can Anthropic safely run web search entirely on its own infrastructure, while file edits and bash commands must stay client-side?",
+      "options": [
+        "Web search never needs to touch anything private to the user, while file edits and bash commands are meaningless without access to the user's own environment",
+        "Web search is a lighter-weight operation that requires less compute",
+        "Client-side tools are always deprecated in favor of server-side ones",
+        "Anthropic does not have infrastructure capable of running file operations"
+      ],
+      "answer_index": 0
+    }
+  ]
+}

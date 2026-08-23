@@ -110,6 +110,186 @@
         "There is no meaningful tradeoff; the choice is purely stylistic"
       ],
       "answer_index": 0
+    },
+    {
+      "id": "q10",
+      "topic": "coordinator-context-passing",
+      "question": "A synthesis agent produces a report with several claims that have no source attribution. The web search and document analysis subagents are working correctly and returning well-sourced results. What is the most likely root cause?",
+      "options": [
+        "The coordinator failed to forward the subagents' sourced findings as context into the synthesis agent's input",
+        "The synthesis agent's system prompt needs an explicit instruction to include citations",
+        "The web search subagent's results aren't actually well-sourced despite appearances",
+        "This is normal agent output variance and doesn't indicate an architectural issue"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q11",
+      "topic": "role-scoped-subagent-splitting",
+      "question": "A code review agent equipped with 18 tools has slow reviews and frequently selects the wrong tool. What is the most effective architectural change?",
+      "options": [
+        "Split the single agent into role-scoped subagents (e.g. security, style, performance), each with a small tool subset relevant to its role",
+        "Add more detailed descriptions to all 18 tools so the single agent can distinguish them better",
+        "Reduce to a single generic tool that can perform all 18 functions via parameters",
+        "Lower the temperature so tool selection becomes more deterministic"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q12",
+      "topic": "coordinator-context-passing",
+      "question": "A coordinator agent delegates refactoring work to three specialist subagents: a schema-migration agent, an API-layer agent, and a test-update agent. The test-update agent frequently produces tests that reference database schemas the schema-migration agent has already renamed. What is the root cause?",
+      "options": [
+        "The coordinator isn't forwarding the schema-migration agent's completed renames to the test-update agent before it starts writing tests",
+        "The test-update agent's prompt needs an instruction to double-check schema names before writing tests",
+        "The schema-migration agent isn't renaming things correctly",
+        "The test-update agent should be given a tool to query the database schema directly, bypassing the other subagents entirely"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q13",
+      "topic": "coordinator-context-passing",
+      "question": "A customer-support coordinator routes a ticket to a billing subagent (which confirms the customer's account tier) and then to a technical subagent (which troubleshoots a feature outage). The technical subagent's response ignores the fact that the customer's tier doesn't include that feature at all. What's the most likely root cause?",
+      "options": [
+        "The coordinator never passed the billing subagent's account-tier finding into the technical subagent's input",
+        "The technical subagent's system prompt is missing an instruction to ask about account tier",
+        "The billing subagent misreported the account tier",
+        "This is expected — subagents aren't supposed to share findings with each other"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q14",
+      "topic": "coordinator-context-passing",
+      "question": "A project-planning coordinator spawns a budget subagent (which flags that the client's budget only covers 6 weeks of work) and a timeline subagent (which produces a 10-week project plan with no mention of the budget constraint). What is the most likely root cause?",
+      "options": [
+        "The coordinator didn't forward the budget subagent's 6-week constraint into the timeline subagent's task input",
+        "The timeline subagent needs a tool that lets it query budget data directly",
+        "The budget subagent's estimate is probably wrong",
+        "The client's original request didn't clearly state the budget, so this is a user-input problem"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q15",
+      "topic": "coordinator-context-passing",
+      "question": "A hiring-pipeline coordinator spawns a resume-screening subagent (which rejects a candidate for missing a required certification) and an interview-scheduling subagent (which books that same candidate for an interview anyway). What is the most likely root cause?",
+      "options": [
+        "The coordinator didn't pass the screening subagent's rejection verdict to the scheduling subagent before it acted",
+        "The scheduling subagent's prompt needs an explicit instruction to check certification status itself",
+        "The screening subagent evaluated the wrong certification requirement",
+        "Both subagents are working as intended — scheduling isn't supposed to depend on screening results"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q16",
+      "topic": "coordinator-context-passing",
+      "question": "A code-migration coordinator spawns a dependency-upgrade subagent (which upgrades a library from v2 to v4, noting several breaking API changes) and an integration-test subagent (which writes tests that still call the removed v2-era methods). What is the most likely root cause?",
+      "options": [
+        "The coordinator didn't forward the dependency-upgrade subagent's list of breaking changes into the integration-test subagent's task",
+        "The integration-test subagent's prompt needs a rule to always check for breaking changes before writing tests",
+        "The dependency-upgrade subagent didn't actually upgrade the library correctly",
+        "The integration-test subagent should be merged into the dependency-upgrade subagent to avoid this class of bug entirely"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q17",
+      "topic": "narrow-decomposition-failure-tracing",
+      "question": "A multi-agent research system assigned 'renewable energy technologies' decomposes this into only 'solar panel efficiency' and 'wind turbine design.' Each subagent produces thorough, well-sourced research. The final report is comprehensive on solar and wind but missing geothermal, tidal, biomass, and nuclear fusion entirely. What is the root cause?",
+      "options": [
+        "The coordinator's task decomposition was too narrow — it never assigned those subtopics to any subagent",
+        "The web search subagent failed to search broadly enough",
+        "The synthesis subagent dropped content during aggregation",
+        "The subagents didn't share memory, so coverage gaps like this are unavoidable"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q18",
+      "topic": "narrow-decomposition-failure-tracing",
+      "question": "For the renewable-energy coverage gap (missing geothermal, tidal, biomass, fusion), what is the correct fix?",
+      "options": [
+        "Better coordinator decomposition covering the full topic breadth — not better search queries, not a stronger synthesis agent, and not more subagents",
+        "Add a more capable synthesis subagent that can catch omitted topics on its own",
+        "Improve the web search subagent's query formulation",
+        "Add more subagents to the pipeline so more ground gets covered"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q19",
+      "topic": "coordinator-responsibilities",
+      "question": "A user asks a hub-and-spoke research system (with search, analysis, and synthesis subagents) a simple factual question. Per the 'dynamic subagent selection' responsibility, what should the coordinator do?",
+      "options": [
+        "Dynamically select just the subagent(s) actually needed (e.g. only web search) rather than always routing through the full pipeline",
+        "Always invoke all three subagents for consistency, regardless of query complexity",
+        "Delegate to the synthesis subagent first so it can decide what other subagents are needed",
+        "Randomly select a subset of subagents to reduce load"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q20",
+      "topic": "coordinator-responsibilities",
+      "question": "The coordinator delegates research on the same broad topic to two subagents. Per the 'research scope partitioning' responsibility, what should it do?",
+      "options": [
+        "Assign distinct, non-overlapping subtopics or source types to each subagent (e.g. one searches academic papers, another searches news) to minimize duplication",
+        "Assign the exact same query to both subagents to cross-validate results",
+        "Let each subagent decide its own scope independently",
+        "Only use one subagent at a time so partitioning is never needed"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q21",
+      "topic": "coordinator-responsibilities",
+      "question": "The coordinator evaluates its synthesis output and finds coverage gaps. Per the exam-tested 'iterative refinement' responsibility, what should happen next?",
+      "options": [
+        "The coordinator re-delegates to search/analysis subagents with targeted queries addressing the gaps, then re-invokes synthesis — repeating until coverage is sufficient",
+        "The coordinator accepts the output as final, since the subagents already ran once",
+        "The synthesis subagent requests additional research directly from the search subagent",
+        "The coordinator restarts the entire pipeline from scratch with a brand-new decomposition"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q22",
+      "topic": "subagent-communication-routing",
+      "question": "An engineer proposes letting the search subagent pass results directly to the synthesis subagent, skipping a round-trip through the coordinator, to save time. Per the exam's cardinal communication rule, why is this the wrong answer even though it's more efficient?",
+      "options": [
+        "Direct subagent-to-subagent communication breaks observability, consistent error handling, and controlled information flow — all communication must route through the coordinator regardless of efficiency gains",
+        "Subagents are technically incapable of sending messages to each other in any Claude Code implementation",
+        "It's fine as long as the coordinator is notified afterward",
+        "It's only a problem once more than two subagents are involved"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q23",
+      "topic": "coordinator-context-passing",
+      "question": "The coordinator invokes the web search subagent twice in one session — once for 'solar panel efficiency,' later for 'wind turbine costs.' What does the second invocation know about the first?",
+      "options": [
+        "Nothing — every subagent invocation is completely independent; the second call has zero knowledge of the first unless the coordinator explicitly includes it in the new prompt",
+        "It automatically retains the first invocation's results in its own memory",
+        "It can look up the first invocation's results from shared global state",
+        "It inherits the coordinator's full conversation history, including the first invocation"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q24",
+      "topic": "coordinator-context-passing",
+      "question": "When the coordinator spawns a subagent, what does that subagent have access to by default?",
+      "options": [
+        "Only what the coordinator explicitly includes in its prompt — not the coordinator's system prompt, prior conversation, or other subagents' results unless passed explicitly",
+        "The coordinator's full conversation history automatically",
+        "The coordinator's system prompt, but not any prior messages",
+        "Results from any other subagent already invoked in the session"
+      ],
+      "answer_index": 0
     }
   ]
 }

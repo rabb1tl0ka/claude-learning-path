@@ -1,0 +1,55 @@
+{
+  "course": "Building with the Claude API",
+  "chapter": "Quiz on tool use with Claude",
+  "generated": "2026-08-20",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "tool workflow sequence",
+      "question": "What is the correct sequence of the tool use workflow?",
+      "options": [
+        "Initial request, tool request, data retrieval, final response",
+        "Final response, tool request, initial request, data retrieval",
+        "Data retrieval, initial request, final response, tool request",
+        "Tool request, final response, initial request, data retrieval"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "batch tool vs message batches api",
+      "question": "A quiz question asks what problem the \"batch tool\" solves. What's the important nuance here?",
+      "options": [
+        "There's no literal \"batch tool\" in the tool-use material — the question actually refers to the separate Message Batches API for bulk async processing of independent requests",
+        "The batch tool is a built-in tool exactly like the text editor tool, with its own JSON schema",
+        "The batch tool automatically retries failed tool calls",
+        "The batch tool is only available in streaming mode"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "built-in tool differences",
+      "question": "What differentiates the built-in text editor and web search tools from each other?",
+      "options": [
+        "Both provide a schema, but you may still need to implement functionality yourself — truer of the text editor than web search",
+        "The text editor tool requires no implementation at all, unlike web search",
+        "Web search requires a manual server-side implementation, unlike the text editor tool",
+        "Neither tool provides a schema; both must be built from scratch"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q4",
+      "topic": "real-time information via tools",
+      "question": "What lets Claude get current, real-time information by default that its training data alone wouldn't provide?",
+      "options": [
+        "Tools",
+        "Extended thinking",
+        "A higher temperature setting",
+        "Prompt caching"
+      ],
+      "answer_index": 0
+    }
+  ]
+}

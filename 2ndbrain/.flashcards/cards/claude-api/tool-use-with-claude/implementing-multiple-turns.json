@@ -1,0 +1,43 @@
+{
+  "course": "Building with the Claude API",
+  "chapter": "Implementing multiple turns",
+  "generated": "2026-08-20",
+  "questions": [
+    {
+      "id": "q1",
+      "topic": "run_conversation loop structure",
+      "question": "Inside the run_conversation function's while loop, what determines whether the loop breaks and returns a final answer versus continuing?",
+      "options": [
+        "Whether the response's stop_reason is tool_use (continue) or something else (break and return)",
+        "Whether the message list has grown past a fixed length",
+        "Whether the user sends a new message",
+        "A fixed number of iterations set before the loop starts"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q2",
+      "topic": "appending tool results",
+      "question": "When Claude's response has stop_reason tool_use, what does run_conversation do before looping again?",
+      "options": [
+        "Runs the requested tool and appends the resulting tool_result block(s) to the message list",
+        "Immediately returns the tool_use block to the end user as the final answer",
+        "Discards the tool_use block and re-sends the original prompt unchanged",
+        "Switches to a different model for the next call"
+      ],
+      "answer_index": 0
+    },
+    {
+      "id": "q3",
+      "topic": "loop termination",
+      "question": "Why does run_conversation keep calling Claude in a while loop instead of returning after the first response?",
+      "options": [
+        "Because Claude may need several tool calls before it stops asking for tools and produces a final answer",
+        "Because the API requires at least three calls per conversation",
+        "Because the first response is always incomplete",
+        "Because tool_result blocks must be sent one at a time with a delay"
+      ],
+      "answer_index": 0
+    }
+  ]
+}
