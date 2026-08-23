@@ -108,9 +108,10 @@ For each picked question, use the AskUserQuestion tool: single-select, the 4 opt
 
 Immediately after each answer, teach — don't just verdict. This is the whole point of the quiz; a bare "right/wrong, matches a known pattern" comment doesn't help the user actually understand the material. For **every** question, right or wrong:
 1. State right/wrong.
-2. Give a real explanation grounded in the chapter note: what the correct concept actually is, why it's correct, and — if the user picked wrong — specifically why their chosen option's reasoning fails (not just "that's the wrong pattern"). 2-4 sentences. If the user picked a distractor that represents a known reflexive-but-wrong default (e.g. from an exam-analysis note), name that pattern *in addition to* the concept explanation, not instead of it.
-3. Append a line to `.flashcards/history.jsonl`: `{"date":"YYYY-MM-DD","course":"...","chapter":"...","question_id":"q1","topic":"...","correct":true|false}`
-4. Record the question, options, the user's answer, the correct answer, and the teaching explanation from step 2 in memory (in scratchpad notes, not a file yet) — Step 6 compiles all of these into the results file.
+2. If the user picked wrong, lead with the correct option itself — quote its exact text (not just "option B") — before explaining anything, so the right answer is never left implicit.
+3. Give a real explanation grounded in the chapter note: what the correct concept actually is, why it's correct, and — if the user picked wrong — specifically why their chosen option's reasoning fails (not just "that's the wrong pattern"). 2-4 sentences. If the user picked a distractor that represents a known reflexive-but-wrong default (e.g. from an exam-analysis note), name that pattern *in addition to* the concept explanation, not instead of it.
+4. Append a line to `.flashcards/history.jsonl`: `{"date":"YYYY-MM-DD","course":"...","chapter":"...","question_id":"q1","topic":"...","correct":true|false}`
+5. Record the question, options, the user's answer, the correct answer, and the teaching explanation from steps 2-3 in memory (in scratchpad notes, not a file yet) — Step 6 compiles all of these into the results file.
 
 Do this per-question (not batched at the end) so progress is saved even if the user stops mid-quiz.
 
