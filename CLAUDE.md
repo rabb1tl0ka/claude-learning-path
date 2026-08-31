@@ -48,6 +48,10 @@ e.g. `claude-api`, `what-are-skills.md` — never `Claude API` or `What Are Skil
   `2ndbrain/ccaf-learning/`, rather than starting from a blank slate — see
   `2ndbrain/CLAUDE.md` for how it's organized.
 
+## Note-writing guideline
+
+Before creating a new note (chapter note, gap-topic note, research note, etc.), check whether an existing note already covers the same topic — search `2ndbrain/` by topic/filename first. If one exists, extend it (e.g. add to `## My Insights`) instead of creating a duplicate note. This keeps topic coverage consolidated in one place rather than fragmented across near-duplicate files.
+
 ## Progress
 
 **Current phase:** Exam prep (`2ndbrain/exam-prep/`) — all 4 courses complete, working through practice tests before sitting the certification exam.
