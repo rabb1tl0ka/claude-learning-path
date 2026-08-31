@@ -1,12 +1,13 @@
 # Weak spots
 
-Sorted by wrong-rate descending. Regenerated 2026-08-22.
+Sorted by wrong-rate descending. Regenerated 2026-08-23.
 
 | Topic | Course / Chapter | Attempts | Wrong | Wrong-rate |
 |---|---|---|---|---|
 | few-shot-vs-tool-granularity | Building with the Claude API / Prompt Engineering Techniques | 5 | 4 | 80% |
 | tool-choice/tool-granularity confusion | Building with the Claude API / Introducing Tool Use | 4 | 2 | 50% |
 | worktree-coordination | Claude Code in Action / Long-running sessions, steering, and CLAUDE.md configuration | 4 | 2 | 50% |
+| hard-rules-belong-in-hooks | Claude Code in Action / Long-running sessions, steering, and CLAUDE.md configuration | 2 | 1 | 50% |
 | tool description quality | Building with the Claude API / Introducing Tool Use | 5 | 2 | 40% |
 | root-cause-to-mechanism matching | Building with the Claude API / Prompt Engineering Techniques | 8 | 3 | 38% |
 | coordinator-context-passing | Building with the Claude API / Agents and workflows | 11 | 4 | 36% |
@@ -49,5 +50,4 @@ Sorted by wrong-rate descending. Regenerated 2026-08-22.
 | structuring with XML tags | Building with the Claude API / Prompt Engineering Techniques | 1 | 0 | 0% |
 | providing examples | Building with the Claude API / Prompt Engineering Techniques | 1 | 0 | 0% |
 | prompt engineering workflow | Building with the Claude API / Prompt Engineering Techniques | 1 | 0 | 0% |
-| hard-rules-belong-in-hooks | Claude Code in Action / Long-running sessions, steering, and CLAUDE.md configuration | 1 | 0 | 0% |
 | subagent-communication-routing | Building with the Claude API / Agents and workflows | 1 | 0 | 0% |
